@@ -61,7 +61,7 @@
                 </list>
                 <schemaSpec ident="cei_for_historians"
                     source="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/ODD_compiled_tei_cei.xml"
-                    start="TEI">
+                    start="TEI teiCorpus">
                     <!-- required modules -->
                     <moduleRef key="header"/>
                     <moduleRef key="linking"/>
