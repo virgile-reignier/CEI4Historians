@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>ODD for Valentinois County Archives</title>
+                <author>Virgile Reignier (PhD student at the Ecole nationale des
+                    chartes-PSL)</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>This ODD is a test version built as part of the exploration of my thesis corpus.
+                    It is available online via Github for discussion but not yet finalized</p>
+            </publicationStmt>
+            <notesStmt>
+                <note corresp="https://www.theses.fr/s349095"/>
+            </notesStmt>
+            <sourceDesc>
+                <bibl xml:id="vid_1997">
+                    <title>Vocabulaire International de la Diplomatique</title>
+                    <abbr>VID</abbr>
+                    <author>Commission Internationale de Diplomatique</author>
+                    <editor>Maria Milagros Cárcel Ortí</editor>
+                    <pubPlace>Valence</pubPlace>
+                    <publisher>Université de Valence</publisher>
+                    <date>1997</date>
+                    <ref target="http://www.cei.lmu.de/VID"/>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <p>Born in 2004, the <ref target="http://www.cei.lmu.de/project">CEI</ref> is a
+                    project to develop a standard for marking up charters with XML. Since 2019, this
+                    standard has been integrated as an <ref
+                        target="https://github.com/GVogeler/CEI2TEI">ODD</ref> into the TEI P5
+                    framework. This ODD is written in addition to the previous to adapt the <ref
+                        target="#vid_1997">diplomatic vocabulary</ref> to the historical analysis of
+                    the charters.</p>
+                <p>Diplomatic vocabulary is particularly useful in historical analyses for
+                    describing the parts of the acts and the roles of the actors mentioned. We will
+                    therefore use it to extract information from texts with the following
+                    modifications:</p>
+                <list>
+                    <item>To avoid separating the people and organizations involved in the act from
+                        those merely mentioned, we remove the legalActor tag and take the values of
+                        its @type attribute and make them the values of the @role attribute, which
+                        is now required for the persName and orgName tags, adding two new values
+                        "mentioned" and "unknown".</item>
+                    <item>We add new tags: "asset" to annotate the goods and values mentioned in the
+                        acts, "appartClause" to annotate the formulas that accompany these goods and
+                        values and "delimitation" to annotate the description of the limits in a
+                        property.</item>
+                    <item>Since we are working in the form of a database, we need an identifier for
+                        each act (or similar), which constitutes a document in the database. We also
+                        need an identifier for the mentions of persons, organizations, places, roles
+                        and unit of measurement described in the acts, in order to disambiguate the
+                        references and associate each mention to the entity or type it refers
+                        to.</item>
+                </list>
+                <schemaSpec ident="cei_for_historians"
+                    source="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/ODD_compiled_tei_cei.xml"
+                    start="TEI">
+                    <!-- required modules -->
+                    <moduleRef key="header"/>
+                    <moduleRef key="linking"/>
+                    <moduleRef key="core"/>
+                    <moduleRef key="tei"/>
+                    <moduleRef key="textstructure"/>
+                    <!-- optional modules -->
+                    <moduleRef key="namesdates"/>
+                    <moduleRef key="transcr"/>
+                    <moduleRef key="figures"/>
+                    <moduleRef key="msdescription"/>
+                    <moduleRef key="textcrit"/>
+                    <moduleRef key="gaiji"/>
+                    <moduleRef key="certainty"/>
+                    <moduleRef key="analysis"/>
+                    <moduleRef key="corpus"/>
+                    <!-- specific module of the cei -->
+                    <moduleRef key="derived-module-tei_cei"/>
+                    <elementSpec ident="TEI" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="person" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="personGrp" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="org" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="place" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="bibl" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="label" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                            <attDef ident="type" mode="change" usage="req">
+                                <valList type="closed">
+                                    <valItem ident="money">
+                                        <desc>Currency</desc>
+                                    </valItem>
+                                    <valItem ident="nonCash">
+                                        <desc>Descriptive unit of an in kind</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="legalActor" mode="delete"/>
+                    <elementSpec ident="persName" mode="change">
+                        <attList>
+                            <attDef ident="role" usage="rec" mode="replace">
+                                <desc>This attribute allows to indicate the role of the person in
+                                    the act on the model of the attribute type of the tag legalActor
+                                    in tei_cei.odd. All allowed values are copied from this scheme,
+                                    except for the last two.</desc>
+                                <valList type="closed">
+                                    <valItem ident="issuer">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?16">VID
+                                                16</ref>. The party whose authority issues the
+                                            document. A lord or judge issuing a ruling is the
+                                            issuer. </desc>
+                                    </valItem>
+                                    <valItem ident="recipient">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
+                                                17</ref>. The party to whom the act of the document
+                                            is addressed.</desc>
+                                    </valItem>
+                                    <valItem ident="beneficiary">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
+                                                17</ref>. In some cases, the party to whom the act
+                                            of the document is addressed is not the party whose
+                                            benefit is intended, in which case the latter should be
+                                            marked as the beneficiary.</desc>
+                                    </valItem>
+                                    <valItem ident="witness">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?263">VID
+                                                263</ref>. Someone who stands as a legal witness of
+                                            the act, generally through subscription. When something
+                                            is done in the presence of a judge, the judge is marked
+                                            as a witness. </desc>
+                                    </valItem>
+                                    <valItem ident="notary">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?273">VID
+                                                273</ref>. Someone who is a professional redactor of
+                                            acts, with a legal authority in their preparation. May
+                                            be the same person as, but separate conceptually from
+                                            the scribe, who does not bear a legal role in the
+                                            act.</desc>
+                                    </valItem>
+                                    <valItem ident="promisor">
+                                        <desc> The party of a contract who makes a promise. All
+                                            kinds of promisors are meant, which may include
+                                            lessors/lessees, contractors, debtors, etc. </desc>
+                                    </valItem>
+                                    <valItem ident="promisee">
+                                        <desc> The party of a contract who is on the receiving end a
+                                            promise. May also be a promisor where there is a mutual
+                                            trade. </desc>
+                                    </valItem>
+                                    <valItem ident="intervenor">
+                                        <desc> cf. <ref
+                                                target="http://www.cei.lmu.de/VID/VID.php?66">VID
+                                                66</ref>. A party who joins a legal process by the
+                                            authority of the judicial system, who is not
+                                            (originally) party to the contract. May be used for
+                                            legal intervenors, advocates, procurators, accusers
+                                            (where said are not recipients or beneficiaries),
+                                            petitioners/sponsors who are not recipients or
+                                            beneficiaries of the resulting act, judges (where they
+                                            are not acting as issuers or witnesses), guarantors,
+                                            etc. </desc>
+                                    </valItem>
+                                    <valItem ident="other">
+                                        <desc> Any legal actor that cannot fit into the other
+                                            categories here. Please consider submitting an issue on
+                                            GitHub explaining this use.</desc>
+                                    </valItem>
+                                    <valItem ident="sigillant">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?503">VID
+                                                503</ref>. The owner of a seal.</desc>
+                                    </valItem>
+                                    <valItem ident="third">
+                                        <desc> A third-party is anyone who is not a party to a
+                                            contract or act but might be affected or involved.
+                                        </desc>
+                                    </valItem>
+                                    <!-- Beginning of the new values -->
+                                    <valItem ident="mentioned">
+                                        <desc>Any person mentioned in the act who is not a legal
+                                            actor, such as a relative or neighbor.</desc>
+                                    </valItem>
+                                    <valItem ident="unknown">
+                                        <desc>Person mentioned in a document without it being
+                                            possible to determine his or her role, for example
+                                            because of a gap in the document</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="orgName" mode="change">
+                        <desc>Such as persName</desc>
+                        <attList>
+                            <attDef ident="role" usage="rec" mode="replace">
+                                <valList type="closed">
+                                    <valItem ident="issuer">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?16">VID
+                                                16</ref>. The party whose authority issues the
+                                            document. A lord or judge issuing a ruling is the
+                                            issuer. </desc>
+                                    </valItem>
+                                    <valItem ident="recipient">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
+                                                17</ref>. The party to whom the act of the document
+                                            is addressed.</desc>
+                                    </valItem>
+                                    <valItem ident="beneficiary">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
+                                                17</ref>. In some cases, the party to whom the act
+                                            of the document is addressed is not the party whose
+                                            benefit is intended, in which case the latter should be
+                                            marked as the beneficiary.</desc>
+                                    </valItem>
+                                    <valItem ident="witness">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?263">VID
+                                                263</ref>. Someone who stands as a legal witness of
+                                            the act, generally through subscription. When something
+                                            is done in the presence of a judge, the judge is marked
+                                            as a witness. </desc>
+                                    </valItem>
+                                    <valItem ident="notary">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?273">VID
+                                                273</ref>. Someone who is a professional redactor of
+                                            acts, with a legal authority in their preparation. May
+                                            be the same person as, but separate conceptually from
+                                            the scribe, who does not bear a legal role in the
+                                            act.</desc>
+                                    </valItem>
+                                    <valItem ident="promisor">
+                                        <desc> The party of a contract who makes a promise. All
+                                            kinds of promisors are meant, which may include
+                                            lessors/lessees, contractors, debtors, etc. </desc>
+                                    </valItem>
+                                    <valItem ident="promisee">
+                                        <desc> The party of a contract who is on the receiving end a
+                                            promise. May also be a promisor where there is a mutual
+                                            trade. </desc>
+                                    </valItem>
+                                    <valItem ident="intervenor">
+                                        <desc> cf. <ref
+                                                target="http://www.cei.lmu.de/VID/VID.php?66">VID
+                                                66</ref>. A party who joins a legal process by the
+                                            authority of the judicial system, who is not
+                                            (originally) party to the contract. May be used for
+                                            legal intervenors, advocates, procurators, accusers
+                                            (where said are not recipients or beneficiaries),
+                                            petitioners/sponsors who are not recipients or
+                                            beneficiaries of the resulting act, judges (where they
+                                            are not acting as issuers or witnesses), guarantors,
+                                            etc. </desc>
+                                    </valItem>
+                                    <valItem ident="other">
+                                        <desc> Any legal actor that cannot fit into the other
+                                            categories here. Please consider submitting an issue on
+                                            GitHub explaining this use.</desc>
+                                    </valItem>
+                                    <valItem ident="sigillant">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/VID.php?503">VID
+                                                503</ref>. The owner of a seal.</desc>
+                                    </valItem>
+                                    <valItem ident="third">
+                                        <desc> A third-party is anyone who is not a party to a
+                                            contract or act but might be affected or involved.
+                                        </desc>
+                                    </valItem>
+                                    <!-- Beginning of the new values -->
+                                    <valItem ident="mentioned">
+                                        <desc>Any organisation mentioned in the act who is not a
+                                            legal actor, such as a relative or neighbor.</desc>
+                                    </valItem>
+                                    <valItem ident="unknown">
+                                        <desc>Organisation mentioned in a document without it being
+                                            possible to determine his role, for example because of a
+                                            gap in the document</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="roleName" mode="change">
+                        <attList>
+                            <attDef ident="nymRef" mode="change" usage="rec">
+                                <desc>This attribute is necessary to attach this element to the
+                                    referential entities to which it applies.</desc>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="placeName" mode="change">
+                        <attList>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="relation" mode="change">
+                        <classes mode="change">
+                            <memberOf key="model.persNamePart"/>
+                        </classes>
+                        <content>
+                            <macroRef key="macro.specialPara"/>
+                        </content>
+                        <attList>
+                            <attDef ident="type" mode="change" usage="rec">
+                                <valList type="closed">
+                                    <valItem ident="fam">
+                                        <desc>Family relationship</desc>
+                                    </valItem>
+                                    <valItem ident="vas">
+                                        <desc>Loyalty to a lord, often in exchange for goods</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                        <remarks>
+                            <p>We modify this element so that it describes the relationships
+                                mentioned in the texts and not just a general description of these
+                                relationships in the header.</p>
+                        </remarks>
+                    </elementSpec>
+                    <elementSpec ident="measure" mode="change">
+                        <attList>
+                            <attDef ident="unit" mode="change" usage="rec">
+                                <desc>This attribute is necessary to link a unit of measurement to a
+                                    referential entity.</desc>
+                                <datatype>
+                                    <dataRef key="teidata.pointer"/>
+                                </datatype>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="asset" mode="add">
+                        <desc>Describes the goods and values mentioned in the acts.</desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.inter"/>
+                        </classes>
+                        <content>
+                            <macroRef key="macro.specialPara"/>
+                            <classRef key="model.measureLike" minOccurs="0"/>
+                        </content>
+                        <attList>
+                            <attDef ident="type" mode="change" usage="req">
+                                <valList type="closed">
+                                    <valItem ident="realEstate">
+                                        <desc>Immovable property such as lands or buildings</desc>
+                                    </valItem>
+                                    <valItem ident="amount">
+                                        <desc>Value in cash or kind</desc>
+                                    </valItem>
+                                    <valItem ident="rents">
+                                        <desc>Regular collection of a sum in kind or in cash</desc>
+                                    </valItem>
+                                    <valItem ident="fiefdom">
+                                        <desc>Property or income obtained by investiture</desc>
+                                    </valItem>
+                                    <valItem ident="justice">
+                                        <desc>Power to pass judgments and impose sentences</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="appartClause" mode="add">
+                        <desc>
+                            <ref target="http://www.cei.lmu.de/VID/#204">VID 204</ref>.
+                            (Appartenance clause). The things and rights that belong to a property,
+                            often in the form of a list accompanying the designation of the
+                            property.</desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="model.inter"/>
+                        </classes>
+                        <content>
+                            <macroRef key="macro.specialPara"/>
+                        </content>
+                    </elementSpec>
+                    <elementSpec ident="delimitation" mode="add">
+                        <desc>Definition of a limit, material or legal, in the possession of a
+                            property.</desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.inter"/>
+                        </classes>
+                        <content>
+                            <macroRef key="macro.specialPara"/>
+                        </content>
+                        <attList>
+                            <attDef ident="type" mode="change" usage="req">
+                                <valList type="closed">
+                                    <valItem ident="addition">
+                                        <desc>Description of an additional property or a right
+                                            associated with a property</desc>
+                                    </valItem>
+                                    <valItem ident="subtraction">
+                                        <desc>Description of an exception within a property, whether
+                                            material, a right of use or a right to exercise
+                                            justice</desc>
+                                    </valItem>
+                                    <valItem ident="boundary">
+                                        <desc>Description of a physical element that separates one
+                                            property from another.</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                </schemaSpec>
+            </div>
+        </body>
+    </text>
+</TEI>
