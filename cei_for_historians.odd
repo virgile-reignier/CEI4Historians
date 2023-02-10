@@ -80,6 +80,20 @@
                     <moduleRef key="corpus"/>
                     <!-- specific module of the cei -->
                     <moduleRef key="derived-module-tei_cei"/>
+                    <elementSpec ident="teiCorpus" mode="change">
+                        <content>
+                            <sequence>
+                                <elementRef key="teiHeader"/>
+                                <classRef key="model.resource"
+                                    minOccurs="0"/>
+                                <classRef key="model.describedResource"
+                                    minOccurs="0"/>
+                            </sequence>
+                        </content>
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
                     <elementSpec ident="TEI" mode="change">
                         <attList>
                             <attDef ident="xml:id" mode="change" usage="req"/>
