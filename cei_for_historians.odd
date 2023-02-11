@@ -85,9 +85,9 @@
                             <sequence>
                                 <elementRef key="teiHeader"/>
                                 <classRef key="model.resource"
-                                    minOccurs="0"/>
+                                    minOccurs="0" maxOccurs="unbounded"/>
                                 <classRef key="model.describedResource"
-                                    minOccurs="0"/>
+                                    minOccurs="0" maxOccurs="unbounded"/>
                             </sequence>
                         </content>
                         <attList>
