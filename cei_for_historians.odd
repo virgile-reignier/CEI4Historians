@@ -84,15 +84,20 @@
                         <content>
                             <sequence>
                                 <elementRef key="teiHeader"/>
-                                <classRef key="model.resource"
-                                    minOccurs="0" maxOccurs="unbounded"/>
-                                <classRef key="model.describedResource"
-                                    minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.describedResource" minOccurs="0"
+                                    maxOccurs="unbounded"/>
                             </sequence>
                         </content>
                         <attList>
                             <attDef ident="xml:id" mode="change" usage="req"/>
                         </attList>
+                        <remarks>
+                            <p>Since we are working with a database, we do not need to align the TEI
+                                documents in the same teiCorpus file, they only need to be aligned
+                                in the same collection so that an xQuery function can look up the
+                                general metadata of the teiCorpus when useful.</p>
+                        </remarks>
                     </elementSpec>
                     <elementSpec ident="TEI" mode="change">
                         <attList>
