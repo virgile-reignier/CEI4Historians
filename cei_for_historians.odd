@@ -25,6 +25,13 @@
                     <date>1997</date>
                     <ref target="http://www.cei.lmu.de/VID"/>
                 </bibl>
+                <bibl xml:id="adele_webapp">
+                    <title>Album de diplomatique en ligne européen</title>
+                    <abbr>Adele</abbr>
+                    <author>Olivier Guyotjeannin</author>
+                    <author>Ecole nationale des chartes</author>
+                    <ref target="https://adele.chartes.psl.eu/"/>
+                </bibl>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -38,19 +45,22 @@
                     framework. This ODD is written in addition to the previous to adapt the <ref
                         target="#vid_1997">diplomatic vocabulary</ref> to the historical analysis of
                     the charters.</p>
-                <p>Diplomatic vocabulary is particularly useful in historical analyses for
-                    describing the parts of the acts and the roles of the actors mentioned. We will
-                    therefore use it to extract information from texts with the following
-                    modifications:</p>
+                <p>Rather than analyzing the form of the acts, our objective here is to use
+                    diplomatic vocabulary to extract information about the persons and assets
+                    mentioned in the acts, all from a quantitative perspective. We therefore propose
+                    to add the following modifications:</p>
                 <list>
                     <item>To avoid separating the people and organizations involved in the act from
                         those merely mentioned, we remove the legalActor tag and take the values of
                         its @type attribute and make them the values of the @role attribute, which
                         is now required for the persName and orgName tags, adding two new values
                         "mentioned" and "unknown".</item>
+                    <item>We add new types to the diploPart tag: "appartClause" to annotate the
+                        formulas that accompany property descriptions; "explaClause" to annotate the
+                        explanations that expand on the scope and terms of the "dispositio";
+                        "laudatio" to annotate the confirmations that are added to the act.</item>
                     <item>We add new tags: "asset" to annotate the goods and values mentioned in the
-                        acts, "appartClause" to annotate the formulas that accompany these goods and
-                        values and "delimitation" to annotate the description of the limits in a
+                        acts; "delimitation" to annotate the description of the limits in a
                         property.</item>
                     <item>Since we are working in the form of a database, we need an identifier for
                         each act (or similar), which constitutes a document in the database. We also
@@ -389,6 +399,33 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <elementSpec ident="diploPart" mode="change">
+                        <attList>
+                            <attDef ident="type" mode="change">
+                                <valList mode="change">
+                                    <valItem ident="appartClause" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#204">VID
+                                                204</ref>. (Appartenance clause). The things and
+                                            rights that belong to a property, often in the form of a
+                                            list accompanying the designation of the
+                                            property.</desc>
+                                    </valItem>
+                                    <valItem ident="explaClause" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#203">VID
+                                                203</ref>. (Explanation clause). Complete a clause
+                                            to clarify its scope or terms.</desc>
+                                    </valItem>
+                                    <valItem ident="laudatio" mode="add">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
+                                                334</ref>. Consent and confirmation of a decision by
+                                            a parent or lord.</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
                     <elementSpec ident="asset" mode="add">
                         <desc>Describes the goods and values mentioned in the acts.</desc>
                         <classes>
@@ -407,7 +444,8 @@
                                         <desc>Immovable property such as lands or buildings</desc>
                                     </valItem>
                                     <valItem ident="amount">
-                                        <desc>Value in cash or kind</desc>
+                                        <desc>Value in cash or kind, expressed absolutely or
+                                            relatively</desc>
                                     </valItem>
                                     <valItem ident="rents">
                                         <desc>Regular collection of a sum in kind or in cash</desc>
@@ -421,20 +459,6 @@
                                 </valList>
                             </attDef>
                         </attList>
-                    </elementSpec>
-                    <elementSpec ident="appartClause" mode="add">
-                        <desc>
-                            <ref target="http://www.cei.lmu.de/VID/#204">VID 204</ref>.
-                            (Appartenance clause). The things and rights that belong to a property,
-                            often in the form of a list accompanying the designation of the
-                            property.</desc>
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="model.inter"/>
-                        </classes>
-                        <content>
-                            <macroRef key="macro.specialPara"/>
-                        </content>
                     </elementSpec>
                     <elementSpec ident="delimitation" mode="add">
                         <desc>Definition of a limit, material or legal, in the possession of a
