@@ -402,7 +402,7 @@
                     <elementSpec ident="diploPart" mode="change">
                         <attList>
                             <attDef ident="type" mode="change">
-                                <valList mode="change">
+                                <valList mode="change" type="closed">
                                     <valItem ident="appartClause" mode="add">
                                         <desc>
                                             <ref target="http://www.cei.lmu.de/VID/#204">VID
