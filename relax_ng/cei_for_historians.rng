@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-03-10T10:24:45Z. .
+Schema generated from ODD source 2023-03-17T14:53:01Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -5828,55 +5828,53 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
                </data>
             </attribute>
          </optional>
-         <optional>
-            <attribute name="unit">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unit) This attribute is necessary to link a unit of measurement to a referential entity.
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unit) This attribute is necessary to link a unit of measurement to a referential entity.
 Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (hertz); 5] Pa (pascal); 6] Ω (ohm); 7] L (litre); 8] t (tonne); 9] ha (hectare); 10] Å (ångström); 11] mL (millilitre); 12] cm (centimetre); 13] dB (decibel); 14] kbit (kilobit); 15] Kibit (kibibit); 16] kB (kilobyte); 17] KiB (kibibyte); 18] MB (megabyte); 19] MiB (mebibyte)</a:documentation>
-               <choice>
-                  <value>m</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(metre) SI base unit of length</a:documentation>
-                  <value>kg</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilogram) SI base unit of mass</a:documentation>
-                  <value>s</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(second) SI base unit of time</a:documentation>
-                  <value>Hz</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hertz) SI unit of frequency</a:documentation>
-                  <value>Pa</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pascal) SI unit of pressure or stress</a:documentation>
-                  <value>Ω</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ohm) SI unit of electric resistance</a:documentation>
-                  <value>L</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(litre) 1 dm³</a:documentation>
-                  <value>t</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(tonne) 10³ kg</a:documentation>
-                  <value>ha</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hectare) 1 hm²</a:documentation>
-                  <value>Å</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ångström) 10⁻¹⁰ m</a:documentation>
-                  <value>mL</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(millilitre) </a:documentation>
-                  <value>cm</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(centimetre) </a:documentation>
-                  <value>dB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(decibel) see remarks, below</a:documentation>
-                  <value>kbit</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilobit) 10³ or 1000 bits</a:documentation>
-                  <value>Kibit</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kibibit) 2¹⁰ or 1024 bits</a:documentation>
-                  <value>kB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilobyte) 10³ or 1000 bytes</a:documentation>
-                  <value>KiB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kibibyte) 2¹⁰ or 1024 bytes</a:documentation>
-                  <value>MB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(megabyte) 10⁶ or 1 000 000 bytes</a:documentation>
-                  <value>MiB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(mebibyte) 2²⁰ or 1 048 576 bytes</a:documentation>
-                  <data type="anyURI">
-                     <param name="pattern">\S+</param>
-                  </data>
-               </choice>
-            </attribute>
-         </optional>
+            <choice>
+               <value>m</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(metre) SI base unit of length</a:documentation>
+               <value>kg</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilogram) SI base unit of mass</a:documentation>
+               <value>s</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(second) SI base unit of time</a:documentation>
+               <value>Hz</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hertz) SI unit of frequency</a:documentation>
+               <value>Pa</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pascal) SI unit of pressure or stress</a:documentation>
+               <value>Ω</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ohm) SI unit of electric resistance</a:documentation>
+               <value>L</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(litre) 1 dm³</a:documentation>
+               <value>t</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(tonne) 10³ kg</a:documentation>
+               <value>ha</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hectare) 1 hm²</a:documentation>
+               <value>Å</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ångström) 10⁻¹⁰ m</a:documentation>
+               <value>mL</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(millilitre) </a:documentation>
+               <value>cm</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(centimetre) </a:documentation>
+               <value>dB</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(decibel) see remarks, below</a:documentation>
+               <value>kbit</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilobit) 10³ or 1000 bits</a:documentation>
+               <value>Kibit</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kibibit) 2¹⁰ or 1024 bits</a:documentation>
+               <value>kB</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kilobyte) 10³ or 1000 bytes</a:documentation>
+               <value>KiB</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(kibibyte) 2¹⁰ or 1024 bytes</a:documentation>
+               <value>MB</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(megabyte) 10⁶ or 1 000 000 bytes</a:documentation>
+               <value>MiB</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(mebibyte) 2²⁰ or 1 048 576 bytes</a:documentation>
+               <data type="anyURI">
+                  <param name="pattern">\S+</param>
+               </data>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -10941,72 +10939,68 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="att.canonical.attribute.key"/>
          <ref name="att.canonical.attribute.ref"/>
          <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute name="role">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>issuer</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?16">VID
+         <attribute name="role">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>issuer</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?16">VID
                                                 16</a>. The party whose authority issues the document. A lord or judge issuing a ruling is the issuer.</a:documentation>
-                  <value>recipient</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
+               <value>recipient</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?17">VID
                                                 17</a>. The party to whom the act of the document is addressed.</a:documentation>
-                  <value>beneficiary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
+               <value>beneficiary</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?17">VID
                                                 17</a>. In some cases, the party to whom the act of the document is addressed is not the party whose benefit is intended, in which case the latter should be marked as the beneficiary.</a:documentation>
-                  <value>witness</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?263">VID
+               <value>witness</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?263">VID
                                                 263</a>. Someone who stands as a legal witness of the act, generally through subscription. When something is done in the presence of a judge, the judge is marked as a witness.</a:documentation>
-                  <value>notary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?273">VID
+               <value>notary</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?273">VID
                                                 273</a>. Someone who is a professional redactor of acts, with a legal authority in their preparation. May be the same person as, but separate conceptually from the scribe, who does not bear a legal role in the act.</a:documentation>
-                  <value>promisor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who makes a promise. All kinds of promisors are meant, which may include lessors/lessees, contractors, debtors, etc. </a:documentation>
-                  <value>promisee</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who is on the receiving end a promise. May also be a promisor where there is a mutual trade. </a:documentation>
-                  <value>intervenor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">cf. <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?66">VID
+               <value>promisor</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who makes a promise. All kinds of promisors are meant, which may include lessors/lessees, contractors, debtors, etc. </a:documentation>
+               <value>promisee</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who is on the receiving end a promise. May also be a promisor where there is a mutual trade. </a:documentation>
+               <value>intervenor</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">cf. <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?66">VID
                                                 66</a>. A party who joins a legal process by the authority of the judicial system, who is not (originally) party to the contract. May be used for legal intervenors, advocates, procurators, accusers (where said are not recipients or beneficiaries), petitioners/sponsors who are not recipients or beneficiaries of the resulting act, judges (where they are not acting as issuers or witnesses), guarantors, etc.</a:documentation>
-                  <value>other</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any legal actor that cannot fit into the other categories here. Please consider submitting an issue on GitHub explaining this use.</a:documentation>
-                  <value>sigillant</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?503">VID
+               <value>other</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any legal actor that cannot fit into the other categories here. Please consider submitting an issue on GitHub explaining this use.</a:documentation>
+               <value>sigillant</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?503">VID
                                                 503</a>. The owner of a seal.</a:documentation>
-                  <value>third</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A third-party is anyone who is not a party to a contract or act but might be affected or involved. </a:documentation>
-                  <value>mentioned</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any organisation mentioned in the act who is not a legal actor, such as a relative or neighbor.</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Organisation mentioned in a document without it being possible to determine his role, for example because of a gap in the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="nymRef">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
+               <value>third</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A third-party is anyone who is not a party to a contract or act but might be affected or involved. </a:documentation>
+               <value>mentioned</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any organisation mentioned in the act who is not a legal actor, such as a relative or neighbor.</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Organisation mentioned in a document without it being possible to determine his role, for example because of a gap in the document</a:documentation>
+            </choice>
+         </attribute>
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
                   name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -11022,72 +11016,68 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="att.canonical.attribute.key"/>
          <ref name="att.canonical.attribute.ref"/>
          <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute name="role">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">This attribute allows to indicate the role of the person in the act on the model of the attribute type of the tag legalActor in tei_cei.odd. All allowed values are copied from this scheme, except for the last two.</a:documentation>
-               <choice>
-                  <value>issuer</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?16">VID
+         <attribute name="role">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">This attribute allows to indicate the role of the person in the act on the model of the attribute type of the tag legalActor in tei_cei.odd. All allowed values are copied from this scheme, except for the last two.</a:documentation>
+            <choice>
+               <value>issuer</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?16">VID
                                                 16</a>. The party whose authority issues the document. A lord or judge issuing a ruling is the issuer.</a:documentation>
-                  <value>recipient</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
+               <value>recipient</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?17">VID
                                                 17</a>. The party to whom the act of the document is addressed.</a:documentation>
-                  <value>beneficiary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
+               <value>beneficiary</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?17">VID
                                                 17</a>. In some cases, the party to whom the act of the document is addressed is not the party whose benefit is intended, in which case the latter should be marked as the beneficiary.</a:documentation>
-                  <value>witness</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?263">VID
+               <value>witness</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?263">VID
                                                 263</a>. Someone who stands as a legal witness of the act, generally through subscription. When something is done in the presence of a judge, the judge is marked as a witness.</a:documentation>
-                  <value>notary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?273">VID
+               <value>notary</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?273">VID
                                                 273</a>. Someone who is a professional redactor of acts, with a legal authority in their preparation. May be the same person as, but separate conceptually from the scribe, who does not bear a legal role in the act.</a:documentation>
-                  <value>promisor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who makes a promise. All kinds of promisors are meant, which may include lessors/lessees, contractors, debtors, etc. </a:documentation>
-                  <value>promisee</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who is on the receiving end a promise. May also be a promisor where there is a mutual trade. </a:documentation>
-                  <value>intervenor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">cf. <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?66">VID
+               <value>promisor</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who makes a promise. All kinds of promisors are meant, which may include lessors/lessees, contractors, debtors, etc. </a:documentation>
+               <value>promisee</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who is on the receiving end a promise. May also be a promisor where there is a mutual trade. </a:documentation>
+               <value>intervenor</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">cf. <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?66">VID
                                                 66</a>. A party who joins a legal process by the authority of the judicial system, who is not (originally) party to the contract. May be used for legal intervenors, advocates, procurators, accusers (where said are not recipients or beneficiaries), petitioners/sponsors who are not recipients or beneficiaries of the resulting act, judges (where they are not acting as issuers or witnesses), guarantors, etc.</a:documentation>
-                  <value>other</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any legal actor that cannot fit into the other categories here. Please consider submitting an issue on GitHub explaining this use.</a:documentation>
-                  <value>sigillant</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?503">VID
+               <value>other</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any legal actor that cannot fit into the other categories here. Please consider submitting an issue on GitHub explaining this use.</a:documentation>
+               <value>sigillant</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?503">VID
                                                 503</a>. The owner of a seal.</a:documentation>
-                  <value>third</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A third-party is anyone who is not a party to a contract or act but might be affected or involved. </a:documentation>
-                  <value>mentioned</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any person mentioned in the act who is not a legal actor, such as a relative or neighbor.</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Person mentioned in a document without it being possible to determine his or her role, for example because of a gap in the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="nymRef">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
+               <value>third</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A third-party is anyone who is not a party to a contract or act but might be affected or involved. </a:documentation>
+               <value>mentioned</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any person mentioned in the act who is not a legal actor, such as a relative or neighbor.</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Person mentioned in a document without it being possible to determine his or her role, for example because of a gap in the document</a:documentation>
+            </choice>
+         </attribute>
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
                   name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -11151,19 +11141,17 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="att.canonical.attribute.key"/>
          <ref name="att.canonical.attribute.ref"/>
          <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute name="nymRef">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
                   name) This attribute is necessary to attach this element to the referential entities to which it applies.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -11180,19 +11168,17 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="att.canonical.attribute.key"/>
          <ref name="att.canonical.attribute.ref"/>
          <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute name="nymRef">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
                   name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -12394,14 +12380,12 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <ref name="att.canonical.attributes"/>
          <ref name="att.sortable.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
-            </attribute>
-         </optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
          <choice>
             <optional>
                <attribute name="active">
