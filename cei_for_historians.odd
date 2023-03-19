@@ -157,7 +157,7 @@
                     <elementSpec ident="legalActor" mode="delete"/>
                     <elementSpec ident="persName" mode="change">
                         <attList>
-                            <attDef ident="role" usage="req" mode="replace">
+                            <attDef ident="role" usage="rec" mode="replace">
                                 <desc>This attribute allows to indicate the role of the person in
                                     the act on the model of the attribute type of the tag legalActor
                                     in tei_cei.odd. All allowed values are copied from this scheme,
@@ -251,13 +251,13 @@
                                     </valItem>
                                 </valList>
                             </attDef>
-                            <attDef ident="nymRef" mode="change" usage="req"/>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
                     <elementSpec ident="orgName" mode="change">
                         <desc>Such as persName</desc>
                         <attList>
-                            <attDef ident="role" usage="req" mode="replace">
+                            <attDef ident="role" usage="rec" mode="replace">
                                 <valList type="closed">
                                     <valItem ident="issuer">
                                         <desc>
@@ -347,7 +347,7 @@
                                     </valItem>
                                 </valList>
                             </attDef>
-                            <attDef ident="nymRef" mode="change" usage="req"/>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
                     <elementSpec ident="roleName" mode="change">
@@ -360,7 +360,7 @@
                     </elementSpec>
                     <elementSpec ident="placeName" mode="change">
                         <attList>
-                            <attDef ident="nymRef" mode="change" usage="req"/>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
                     <elementSpec ident="relation" mode="change">
