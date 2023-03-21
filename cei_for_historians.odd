@@ -390,7 +390,7 @@
                     </elementSpec>
                     <elementSpec ident="measure" mode="change">
                         <attList>
-                            <attDef ident="unit" mode="change" usage="req">
+                            <attDef ident="unit" mode="replace" usage="req">
                                 <desc>This attribute is necessary to link a unit of measurement to a
                                     referential entity.</desc>
                                 <datatype>
@@ -438,7 +438,7 @@
                             <classRef key="model.measureLike" minOccurs="0"/>
                         </content>
                         <attList>
-                            <attDef ident="type" mode="add" usage="req">
+                            <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
                                     <valItem ident="realEstate">
                                         <desc>Immovable property such as lands or buildings</desc>
@@ -472,7 +472,7 @@
                             <macroRef key="macro.specialPara"/>
                         </content>
                         <attList>
-                            <attDef ident="type" mode="add" usage="req">
+                            <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
                                     <valItem ident="addition">
                                         <desc>Description of an additional property or a right
