@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-03-19T16:07:43Z. .
+Schema generated from ODD source 2023-03-21T09:07:16Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -12391,10 +12391,13 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <ref name="att.sortable.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
          <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
-            <data type="token">
-               <param name="pattern">[^\p{C}\p{Z}]+</param>
-            </data>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>fam</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Family relationship</a:documentation>
+               <value>vas</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Loyalty to a lord, often in exchange for goods</a:documentation>
+            </choice>
          </attribute>
          <choice>
             <optional>
@@ -17717,6 +17720,21 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>realEstate</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Immovable property such as lands or buildings</a:documentation>
+               <value>amount</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Value in cash or kind, expressed absolutely or relatively</a:documentation>
+               <value>rents</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Regular collection of a sum in kind or in cash</a:documentation>
+               <value>fiefdom</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Property or income obtained by investiture</a:documentation>
+               <value>justice</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Power to pass judgments and impose sentences</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -17731,6 +17749,17 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
             <data type="token">
                <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
+         </attribute>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>addition</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Description of an additional property or a right associated with a property</a:documentation>
+               <value>subtraction</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Description of an exception within a property, whether material, a right of use or a right to exercise justice</a:documentation>
+               <value>boundary</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Description of a physical element that separates one property from another.</a:documentation>
+            </choice>
          </attribute>
          <empty/>
       </element>
