@@ -64,10 +64,10 @@
                         property.</item>
                     <item>Since we are working in the form of a database, we need an identifier for
                         each act (or similar), which constitutes a document in the database. We also
-                        need an identifier for the mentions of persons, organizations, places, roles
-                        and unit of measurement described in the acts, in order to disambiguate the
-                        references and associate each mention to the entity or type it refers
-                        to.</item>
+                        need an identifier for the mentions of persons, organizations, places,
+                        roles, documents, and unit of measurement described in the acts, in order to
+                        disambiguate the references and associate each mention to the entity or type
+                        it refers to.</item>
                 </list>
                 <schemaSpec ident="cei_for_historians"
                     source="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/ODD_compiled_tei_cei.xml"
@@ -142,13 +142,36 @@
                     <elementSpec ident="label" mode="change">
                         <attList>
                             <attDef ident="xml:id" mode="change" usage="req"/>
-                            <attDef ident="type" mode="change" usage="req">
+                            <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
                                     <valItem ident="money">
                                         <desc>Currency</desc>
                                     </valItem>
                                     <valItem ident="nonCash">
                                         <desc>Descriptive unit of an in kind</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="ref" mode="change">
+                        <attList>
+                            <attDef ident="type" mode="replace">
+                                <valList type="closed">
+                                    <valItem ident="confirmAct">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#61">VID
+                                                51</ref>. the reference to the act which is the
+                                            subject of the confirmation.</desc>
+                                    </valItem>
+                                    <valItem ident="mentioned">
+                                        <desc>Any document to which reference is made in a text,
+                                            without having a direct legal role in relation to the
+                                            provisions of the act which mentions it.</desc>
+                                    </valItem>
+                                    <valItem ident="unknown">
+                                        <desc>Act mentioned in a document without it being possible
+                                            to determine his or her role, for example because of a
+                                            gap.</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
