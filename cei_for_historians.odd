@@ -424,7 +424,7 @@
                     </elementSpec>
                     <elementSpec ident="diploPart" mode="change">
                         <attList>
-                            <attDef ident="type" mode="change">
+                            <attDef ident="type" mode="change" usage="req">
                                 <valList mode="change" type="closed">
                                     <valItem ident="appartClause" mode="add">
                                         <desc>

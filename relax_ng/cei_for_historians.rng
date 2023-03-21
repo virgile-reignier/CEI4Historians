@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-03-21T15:16:18Z. .
+Schema generated from ODD source 2023-03-21T15:42:19Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17522,103 +17522,101 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
          </oneOrMore>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>protocol</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The opening protocol contains formulaic information invoking divine aid, naming the issuer and addressee, conveying greetings. Generally a superset of the invocatio, intitulatio, inscriptio, and salutatio. </a:documentation>
-                  <value>contextus</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Also called corpus. The main content relating to the particulars of the act. Generally a superset of the arenga, publicatio, narratio, dispositio, clausulae, and sanctio. </a:documentation>
-                  <value>eschatocol</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The closing protocol includes formulaic information relating to completion of the document. Generally a superset of the subscriptio, corroboratio, datatio, and appreciatio.</a:documentation>
-                  <value>apprecatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?251">VID 251</a>. A solemn ending clause, indicating the achievement of the act, such as 'Fiat. Fiat. Amen.'</a:documentation>
-                  <value>arenga</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. Sometimes called the exordium, preamble, or proem, the arenga is a 'rhetorical preparation for the burden of communication' (Boyle, 97.) which may be particular to the document or wholly formulaic, unlinked in content to the actual act.</a:documentation>
-                  <value>benedictio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?245">VID 245</a>. The benediction clause contains a blessing.</a:documentation>
-                  <value>clausulae</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Clause of qualifiers, exceptions, prohibitions, and obligations relating to the act. </a:documentation>
-                  <value>corroboratio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?246">VID 246</a>. Also known as the ratification clause, the clause of corroboration connects the words of the charter to the effective elements of its validity, whether signature, seal, or promulgation.</a:documentation>
-                  <value>datatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?561">VID 561</a>. The dating clause gives the date of the issuance of the charter, by any dating system.</a:documentation>
-                  <value>dispositio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?198">VID 198</a>. Also known as the conveyance clause, the dispositive clause is the essential or effective clause of the charter, which describes the property or honor to be conveyed, its burndens, conditions, and limitations, and conveys the same.</a:documentation>
-                  <value>inscriptio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?192">VID 192</a>. Also known as the address, the part of the document that gives the name, titles, and addresses the qualities of the addressee or recipient of the act.</a:documentation>
-                  <value>intercessio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?328">VID 328</a>. An intercession clause describes the intervention of a third to support a petition.</a:documentation>
-                  <value>intitulatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?187">VID 187</a>. Also known as the superscriptio or the persona salutans, the part of the document which gives the namme of the issuer and his/her titles.</a:documentation>
-                  <value>invocatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?185">VID 185.</a>. A clause calling upon God or a saint, for divine protection or witness.</a:documentation>
-                  <value>narratio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?197">VID 197</a>. The narration clause states the case of gives the circumstances or context leading up to the issuance of the act.</a:documentation>
-                  <value>notificatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. The publication, promulgation, or notfication clause addresses itself to all those concerned in the act, as parties or readers.</a:documentation>
-                  <value>rogatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?326">VID 326</a>. Clause expressing request for formal documentation.</a:documentation>
-                  <value>publicatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. See notificatio.</a:documentation>
-                  <value>salutatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?194">VID 194</a>. A clause expressing greetings, usually at the beginning of the document. A subtype of this is the salutatio finale or final salutation (VID 253), which comes at the end of the document.</a:documentation>
-                  <value>sanctio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?237">VID 237</a>. Also known as a penal clause. Defines penalties for breach of act.</a:documentation>
-                  <value>subscriptio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?254">VID 254</a>. Part of the act containing the signatures of the principals, witnesses, officials, and notaries involved.</a:documentation>
-                  <value>other</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any standard clause that does not fit into the schemata that are documented here. Please consider submitting an issue on GitHub documenting this usage.</a:documentation>
-                  <value>appartClause</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#204">VID
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>protocol</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The opening protocol contains formulaic information invoking divine aid, naming the issuer and addressee, conveying greetings. Generally a superset of the invocatio, intitulatio, inscriptio, and salutatio. </a:documentation>
+               <value>contextus</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Also called corpus. The main content relating to the particulars of the act. Generally a superset of the arenga, publicatio, narratio, dispositio, clausulae, and sanctio. </a:documentation>
+               <value>eschatocol</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The closing protocol includes formulaic information relating to completion of the document. Generally a superset of the subscriptio, corroboratio, datatio, and appreciatio.</a:documentation>
+               <value>apprecatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?251">VID 251</a>. A solemn ending clause, indicating the achievement of the act, such as 'Fiat. Fiat. Amen.'</a:documentation>
+               <value>arenga</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. Sometimes called the exordium, preamble, or proem, the arenga is a 'rhetorical preparation for the burden of communication' (Boyle, 97.) which may be particular to the document or wholly formulaic, unlinked in content to the actual act.</a:documentation>
+               <value>benedictio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?245">VID 245</a>. The benediction clause contains a blessing.</a:documentation>
+               <value>clausulae</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Clause of qualifiers, exceptions, prohibitions, and obligations relating to the act. </a:documentation>
+               <value>corroboratio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?246">VID 246</a>. Also known as the ratification clause, the clause of corroboration connects the words of the charter to the effective elements of its validity, whether signature, seal, or promulgation.</a:documentation>
+               <value>datatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?561">VID 561</a>. The dating clause gives the date of the issuance of the charter, by any dating system.</a:documentation>
+               <value>dispositio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?198">VID 198</a>. Also known as the conveyance clause, the dispositive clause is the essential or effective clause of the charter, which describes the property or honor to be conveyed, its burndens, conditions, and limitations, and conveys the same.</a:documentation>
+               <value>inscriptio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?192">VID 192</a>. Also known as the address, the part of the document that gives the name, titles, and addresses the qualities of the addressee or recipient of the act.</a:documentation>
+               <value>intercessio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?328">VID 328</a>. An intercession clause describes the intervention of a third to support a petition.</a:documentation>
+               <value>intitulatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?187">VID 187</a>. Also known as the superscriptio or the persona salutans, the part of the document which gives the namme of the issuer and his/her titles.</a:documentation>
+               <value>invocatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?185">VID 185.</a>. A clause calling upon God or a saint, for divine protection or witness.</a:documentation>
+               <value>narratio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?197">VID 197</a>. The narration clause states the case of gives the circumstances or context leading up to the issuance of the act.</a:documentation>
+               <value>notificatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. The publication, promulgation, or notfication clause addresses itself to all those concerned in the act, as parties or readers.</a:documentation>
+               <value>rogatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?326">VID 326</a>. Clause expressing request for formal documentation.</a:documentation>
+               <value>publicatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?196">VID 196</a>. See notificatio.</a:documentation>
+               <value>salutatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?194">VID 194</a>. A clause expressing greetings, usually at the beginning of the document. A subtype of this is the salutatio finale or final salutation (VID 253), which comes at the end of the document.</a:documentation>
+               <value>sanctio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?237">VID 237</a>. Also known as a penal clause. Defines penalties for breach of act.</a:documentation>
+               <value>subscriptio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.cei.lmu.de/VID/VID.php?254">VID 254</a>. Part of the act containing the signatures of the principals, witnesses, officials, and notaries involved.</a:documentation>
+               <value>other</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any standard clause that does not fit into the schemata that are documented here. Please consider submitting an issue on GitHub documenting this usage.</a:documentation>
+               <value>appartClause</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#204">VID
                                                 204</a>. (Appartenance clause). The things and rights that belong to a property, often in the form of a list accompanying the designation of the property.</a:documentation>
-                  <value>explaClause</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#203">VID
+               <value>explaClause</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#203">VID
                                                 203</a>. (Explanation clause). Complete a clause to clarify its scope or terms.</a:documentation>
-                  <value>laudatio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#334">VID
+               <value>laudatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#334">VID
                                                 334</a>. Consent and confirmation of a decision by a parent or lord.</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
