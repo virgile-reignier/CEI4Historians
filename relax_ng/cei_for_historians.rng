@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-03-21T15:10:56Z. .
+Schema generated from ODD source 2023-03-21T15:16:18Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -5974,19 +5974,21 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          <ref name="att.internetMedia.attributes"/>
          <ref name="att.pointing.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>confirmAct</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#61">VID
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>confirmAct</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#61">VID
                                                 51</a>. the reference to the act which is the subject of the confirmation.</a:documentation>
-               <value>mentioned</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any document to which reference is made in a text, without having a direct legal role in relation to the provisions of the act which mentions it.</a:documentation>
-               <value>unknown</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Act mentioned in a document without it being possible to determine his or her role, for example because of a gap.</a:documentation>
-            </choice>
-         </attribute>
+                  <value>mentioned</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any document to which reference is made in a text, without having a direct legal role in relation to the provisions of the act which mentions it.</a:documentation>
+                  <value>unknown</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Act mentioned in a document without it being possible to determine his or her role, for example because of a gap.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

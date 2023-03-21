@@ -156,7 +156,7 @@
                     </elementSpec>
                     <elementSpec ident="ref" mode="change">
                         <attList>
-                            <attDef ident="type" mode="replace" usage="req">
+                            <attDef ident="type" mode="replace" usage="rec">
                                 <valList type="closed">
                                     <valItem ident="confirmAct">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#61">VID
