@@ -396,7 +396,7 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="relation" mode="change">
+                    <elementSpec ident="relation" mode="replace">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
                         </classes>
