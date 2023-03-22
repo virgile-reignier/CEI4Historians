@@ -155,6 +155,16 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="ref" mode="change">
+                        <constraintSpec ident="refTypeReq" scheme="schematron">
+                            <desc>The @type attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:ref">
+                                    <s:assert test="@type">
+                                        The element must have the @type attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="type" mode="replace" usage="rec">
                                 <valList type="closed">
@@ -177,18 +187,28 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <constraintSpec ident="refTypeReq" scheme="schematron">
-                        <desc>The @type attribute is required in the body text</desc>
-                        <constraint>
-                            <s:rule context="//tei:body//tei:ref">
-                                <s:assert test="@type">
-                                    The element must have the @type attribute
-                                </s:assert>
-                            </s:rule>
-                        </constraint>
-                    </constraintSpec>
                     <elementSpec ident="legalActor" mode="delete"/>
                     <elementSpec ident="persName" mode="change">
+                        <constraintSpec ident="persNameRoleReq" scheme="schematron">
+                            <desc>The @role attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:persName">
+                                    <s:assert test="@role">
+                                        The element must have the @role attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
+                        <constraintSpec ident="persNameNymRefReq" scheme="schematron">
+                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:persName">
+                                    <s:assert test="@nymRef">
+                                        The element must have the @nymRef attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="role" usage="rec" mode="replace">
                                 <desc>This attribute allows to indicate the role of the person in
@@ -289,6 +309,26 @@
                     </elementSpec>
                     <elementSpec ident="orgName" mode="change">
                         <desc>Such as persName</desc>
+                        <constraintSpec ident="orgNameRoleReq" scheme="schematron">
+                            <desc>The @role attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:orgName">
+                                    <s:assert test="@role">
+                                        The element must have the @role attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
+                        <constraintSpec ident="orgNameNymRefReq" scheme="schematron">
+                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:orgName">
+                                    <s:assert test="@nymRef">
+                                        The element must have the @nymRef attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="role" usage="rec" mode="replace">
                                 <valList type="closed">
@@ -392,6 +432,16 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="placeName" mode="change">
+                        <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
+                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:placeName">
+                                    <s:assert test="@nymRef">
+                                        The element must have the @nymRef attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
