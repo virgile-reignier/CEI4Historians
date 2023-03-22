@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:lang="en">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -177,6 +177,16 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="refTypeReq" scheme="schematron">
+                        <desc>The @type attribute is required in the body text</desc>
+                        <constraint>
+                            <s:rule context="//body//ref">
+                                <s:assert test="@type">
+                                    The element must have the @type attribute
+                                </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="legalActor" mode="delete"/>
                     <elementSpec ident="persName" mode="change">
                         <attList>
