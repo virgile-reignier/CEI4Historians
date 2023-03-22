@@ -180,7 +180,7 @@
                     <constraintSpec ident="refTypeReq" scheme="schematron">
                         <desc>The @type attribute is required in the body text</desc>
                         <constraint>
-                            <s:rule context="//body//ref">
+                            <s:rule context="//tei:body//tei:ref">
                                 <s:assert test="@type">
                                     The element must have the @type attribute
                                 </s:assert>
