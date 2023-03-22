@@ -396,7 +396,7 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="relation" mode="replace">
+                    <elementSpec ident="relation" mode="change">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
                         </classes>
@@ -404,7 +404,7 @@
                             <macroRef key="macro.specialPara"/>
                         </content>
                         <attList>
-                            <attDef ident="type" mode="replace" usage="req">
+                            <attDef ident="name" mode="replace" usage="req">
                                 <valList type="closed">
                                     <valItem ident="fam">
                                         <desc>Family relationship</desc>
