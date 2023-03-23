@@ -449,7 +449,7 @@
                     <constraintSpec ident="NymRefMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@nymRef]">
-                                <s:assert test="id(concat('#', @nymRef))">
+                                <s:assert test="id(substring-after(@nymRef,'#'))">
                                     The value of @nymRef must match an @xml:id
                                 </s:assert>
                             </s:rule>                                
@@ -494,7 +494,7 @@
                     <constraintSpec ident="unitMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@unit]">
-                                <s:assert test="id(concat('#', @unit))">
+                                <s:assert test="id(substring-after(@unit,'#'))">
                                     The value of @unit must match an @xml:id
                                 </s:assert>
                             </s:rule>                                
