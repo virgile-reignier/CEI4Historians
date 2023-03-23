@@ -141,7 +141,7 @@
                     </elementSpec>
                     <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
                         <constraint>
-                            <s:rule context="//*[@source]">
+                            <s:rule context="//tei:profileDesc//*[@source]">
                                 <s:let name="base-uri" value="base-uri()"/>
                                 <s:let name="corpus-uri" value="resolve-uri('../corpus.xml', $base-uri)"/>
                                 <s:assert test="doc-available($corpus-uri)">
