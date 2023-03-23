@@ -142,7 +142,7 @@
                     <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@source]">
-                                <s:assert test="document('../corpus.xml')/*[@xml:id = substring-after(current()/@source, '#')]">
+                                <s:assert test="document(concat(resolve-uri(''), '/../corpus.xml'))//*[@xml:id = substring-after(current()/@source, '#')]">
                                     The value of @source must match an @xml:id in corpus.xml
                                 </s:assert>
                             </s:rule>                                
