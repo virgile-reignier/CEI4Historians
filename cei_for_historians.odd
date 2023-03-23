@@ -494,7 +494,7 @@
                     <constraintSpec ident="unitMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@unit]">
-                                <s:assert test="id(substring-after(@unit,'#'))">
+                                <s:assert test="id(@unit)">
                                     The value of @unit must match an @xml:id
                                 </s:assert>
                             </s:rule>                                
