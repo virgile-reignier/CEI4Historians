@@ -142,10 +142,15 @@
                     <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@source]">
-                                <s:assert test="fn:doc(concat(document(''), '/../corpus.xml'))//*[@xml:id = substring-after(current()/@source, '#')]">
-                                    The value of @source must match an @xml:id in corpus.xml
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="corpus-uri" value="resolve-uri('../corpus.xml', $base-uri)"/>
+                                <s:assert test="doc-available($corpus-uri)">
+                                    The file ../corpus.xml cannot be found.
                                 </s:assert>
-                            </s:rule>                                
+                                <s:assert test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]">
+                                    The value of @source must match an @xml:id in ../corpus.xml.
+                                </s:assert>
+                            </s:rule>                               
                         </constraint>
                     </constraintSpec>
                     <elementSpec ident="label" mode="change">
