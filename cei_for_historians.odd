@@ -446,6 +446,15 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="NymRefMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="*[@nymRef]">
+                                <s:assert test="id(concat('#', $nymRef))">
+                                    The value of @nymRef must match an @xml:id
+                                </s:assert>
+                            </s:rule>                                
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="relation" mode="change">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
@@ -482,6 +491,15 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="unitMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="*[@unit]">
+                                <s:assert test="id(concat('#', $unit))">
+                                    The value of @unit must match an @xml:id
+                                </s:assert>
+                            </s:rule>                                
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="diploPart" mode="change">
                         <attList>
                             <attDef ident="type" mode="change" usage="req">
