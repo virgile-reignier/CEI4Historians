@@ -476,6 +476,24 @@
                         <content>
                             <macroRef key="macro.specialPara"/>
                         </content>
+                        <constraintSpec ident="passiveMatchXml:id" scheme="schematron">
+                            <constraint>
+                                <s:rule context="//*[@passive]">
+                                    <s:assert test="id(substring-after(@passive,'#'))">
+                                        The value of @passive must match an @xml:id
+                                    </s:assert>
+                                </s:rule>                                
+                            </constraint>
+                        </constraintSpec>
+                        <constraintSpec ident="activeMatchXml:id" scheme="schematron">
+                            <constraint>
+                                <s:rule context="//*[@active]">
+                                    <s:assert test="id(substring-after(@active,'#'))">
+                                        The value of @active must match an @xml:id
+                                    </s:assert>
+                                </s:rule>                                
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="name" mode="replace" usage="req">
                                 <valList type="closed">
