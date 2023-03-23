@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-03-23T19:03:38Z. .
+Schema generated from ODD source 2023-03-23T20:24:08Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17858,7 +17858,17 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
       </choice>
    </start>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="cei_for_historians-NymRefMatchXmlid-constraint-rule-24">
+            id="cei_for_historians-sourceMatchXmlid-constraint-rule-24">
+      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+              xmlns:s="http://purl.oclc.org/dsdl/schematron"
+              context="//*[@source]">
+         <s:assert test="document('../corpus.xml')/*[@xml:id = substring-after(current()/@source, '#')]">
+                                    The value of @source must match an @xml:id in corpus.xml
+                                </s:assert>
+      </s:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="cei_for_historians-NymRefMatchXmlid-constraint-rule-25">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               context="//*[@nymRef]">
@@ -17868,7 +17878,7 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="cei_for_historians-unitMatchXmlid-constraint-rule-25">
+            id="cei_for_historians-unitMatchXmlid-constraint-rule-26">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               context="//*[@unit]">
