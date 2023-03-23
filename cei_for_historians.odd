@@ -448,7 +448,7 @@
                     </elementSpec>
                     <constraintSpec ident="NymRefMatchXml:id" scheme="schematron">
                         <constraint>
-                            <s:rule context="tei:*[@nymRef]">
+                            <s:rule context="//*[@nymRef]">
                                 <s:assert test="id(concat('#', $nymRef))">
                                     The value of @nymRef must match an @xml:id
                                 </s:assert>
@@ -493,7 +493,7 @@
                     </elementSpec>
                     <constraintSpec ident="unitMatchXml:id" scheme="schematron">
                         <constraint>
-                            <s:rule context="tei:*[@unit]">
+                            <s:rule context="//*[@unit]">
                                 <s:assert test="id(concat('#', $unit))">
                                     The value of @unit must match an @xml:id
                                 </s:assert>
