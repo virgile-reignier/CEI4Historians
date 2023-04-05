@@ -90,117 +90,102 @@
                     <moduleRef key="corpus"/>
                     <!-- specific module of the cei -->
                     <moduleRef key="derived-module-tei_cei"/>
-                    <elementSpec ident="teiCorpus" mode="change">
+                    <!-- Proposals to modify CEI2TEI -->
+                    <elementSpec ident="diploPart" mode="change">
+                        <attList>
+                            <attDef ident="type" mode="change" usage="req">
+                                <valList mode="change" type="closed">
+                                    <valItem ident="appartClause" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#204">VID
+                                                204</ref>. (Appartenance clause). The things and
+                                            rights that belong to a property, often in the form of a
+                                            list accompanying the designation of the
+                                            property.</desc>
+                                    </valItem>
+                                    <valItem ident="explaClause" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#203">VID
+                                                203</ref>. (Explanation clause). Complete a clause
+                                            to clarify its scope or terms.</desc>
+                                    </valItem>
+                                    <valItem ident="laudatio" mode="add">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
+                                            334</ref>. Consent and confirmation of a decision by
+                                            a parent or lord.</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="asset" mode="add">
+                        <desc>Describes the goods and values mentioned in the acts.</desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.inter"/>
+                        </classes>
                         <content>
-                            <sequence>
-                                <elementRef key="teiHeader"/>
-                                <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded"/>
-                                <classRef key="model.describedResource" minOccurs="0"
-                                    maxOccurs="unbounded"/>
-                            </sequence>
+                            <alternate>
+                                <macroRef key="macro.specialPara"/>
+                                <classRef key="model.measureLike" minOccurs="0"/>
+                            </alternate>
                         </content>
                         <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                        <remarks>
-                            <p>Since we are working with a database, we do not need to align the TEI
-                                documents in the same teiCorpus file, they only need to be aligned
-                                in the same collection so that an xQuery function can look up the
-                                general metadata of the teiCorpus when useful.</p>
-                        </remarks>
-                    </elementSpec>
-                    <elementSpec ident="TEI" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="person" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="personGrp" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="org" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="place" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="bibl" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
-                        </attList>
-                    </elementSpec>
-                    <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
-                        <constraint>
-                            <s:rule context="//tei:profileDesc//*[@source]">
-                                <s:let name="base-uri" value="base-uri()"/>
-                                <s:let name="corpus-uri" value="resolve-uri('../corpus.xml', $base-uri)"/>
-                                <s:assert test="doc-available($corpus-uri)">
-                                    The file ../corpus.xml cannot be found.
-                                </s:assert>
-                                <s:assert test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]">
-                                    The value of @source must match an @xml:id in ../corpus.xml.
-                                </s:assert>
-                            </s:rule>                               
-                        </constraint>
-                    </constraintSpec>
-                    <elementSpec ident="label" mode="change">
-                        <attList>
-                            <attDef ident="xml:id" mode="change" usage="req"/>
                             <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
-                                    <valItem ident="money">
-                                        <desc>Currency</desc>
+                                    <valItem ident="realEstate">
+                                        <desc>Immovable property such as lands or buildings</desc>
                                     </valItem>
-                                    <valItem ident="nonCash">
-                                        <desc>Descriptive unit of an in kind</desc>
+                                    <valItem ident="amount">
+                                        <desc>Value in cash or kind, expressed absolutely or
+                                            relatively</desc>
+                                    </valItem>
+                                    <valItem ident="rents">
+                                        <desc>Regular collection of a sum in kind or in cash</desc>
+                                    </valItem>
+                                    <valItem ident="fiefdom">
+                                        <desc>Property or income obtained by investiture</desc>
+                                    </valItem>
+                                    <valItem ident="justice">
+                                        <desc>Power to pass judgments and impose sentences</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="ref" mode="change">
-                        <constraintSpec ident="refTypeReq" scheme="schematron">
-                            <desc>The @type attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:ref">
-                                    <s:assert test="@type">
-                                        The element must have the @type attribute
-                                    </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
+                    <elementSpec ident="delimitation" mode="add">
+                        <desc>Definition of a limit, material or legal, in the possession of a
+                            property.</desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.inter"/>
+                        </classes>
+                        <content>
+                            <macroRef key="macro.specialPara"/>
+                        </content>
                         <attList>
-                            <attDef ident="type" mode="replace" usage="rec">
+                            <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
-                                    <valItem ident="confirmAct">
-                                        <desc><ref target="http://www.cei.lmu.de/VID/#61">VID
-                                                51</ref>. the reference to the act which is the
-                                            subject of the confirmation.</desc>
+                                    <valItem ident="addition">
+                                        <desc>Description of an additional property or a right
+                                            associated with a property</desc>
                                     </valItem>
-                                    <valItem ident="mentioned">
-                                        <desc>Any document to which reference is made in a text,
-                                            without having a direct legal role in relation to the
-                                            provisions of the act which mentions it.</desc>
+                                    <valItem ident="subtraction">
+                                        <desc>Description of an exception within a property, whether
+                                            material, a right of use or a right to exercise
+                                            justice</desc>
                                     </valItem>
-                                    <valItem ident="unknown">
-                                        <desc>Act mentioned in a document without it being possible
-                                            to determine his or her role, for example because of a
-                                            gap.</desc>
+                                    <valItem ident="boundary">
+                                        <desc>Description of a physical element that separates one
+                                            property from another.</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <!-- Proposals to modify CEI2TEI and using TEI to index entities -->
                     <elementSpec ident="legalActor" mode="delete"/>
                     <elementSpec ident="persName" mode="change">
                         <constraintSpec ident="persNameRoleReq" scheme="schematron">
@@ -280,8 +265,8 @@
                                     </valItem>
                                     <valItem ident="intervenor">
                                         <desc> cf. <ref
-                                                target="http://www.cei.lmu.de/VID/VID.php?66">VID
-                                                66</ref>. A party who joins a legal process by the
+                                            target="http://www.cei.lmu.de/VID/VID.php?66">VID
+                                            66</ref>. A party who joins a legal process by the
                                             authority of the judicial system, who is not
                                             (originally) party to the contract. May be used for
                                             legal intervenors, advocates, procurators, accusers
@@ -396,8 +381,8 @@
                                     </valItem>
                                     <valItem ident="intervenor">
                                         <desc> cf. <ref
-                                                target="http://www.cei.lmu.de/VID/VID.php?66">VID
-                                                66</ref>. A party who joins a legal process by the
+                                            target="http://www.cei.lmu.de/VID/VID.php?66">VID
+                                            66</ref>. A party who joins a legal process by the
                                             authority of the judicial system, who is not
                                             (originally) party to the contract. May be used for
                                             legal intervenors, advocates, procurators, accusers
@@ -437,38 +422,6 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="roleName" mode="change">
-                        <attList>
-                            <attDef ident="nymRef" mode="change" usage="req">
-                                <desc>This attribute is necessary to attach this element to the
-                                    referential entities to which it applies.</desc>
-                            </attDef>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="placeName" mode="change">
-                        <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:placeName">
-                                    <s:assert test="@nymRef">
-                                        The element must have the @nymRef attribute
-                                    </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
-                        <attList>
-                            <attDef ident="nymRef" mode="change" usage="rec"/>
-                        </attList>
-                    </elementSpec>
-                    <constraintSpec ident="NymRefMatchXml:id" scheme="schematron">
-                        <constraint>
-                            <s:rule context="//*[@nymRef]">
-                                <s:assert test="id(substring-after(@nymRef,'#'))">
-                                    The value of @nymRef must match an @xml:id
-                                </s:assert>
-                            </s:rule>                                
-                        </constraint>
-                    </constraintSpec>
                     <elementSpec ident="relation" mode="change">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
@@ -512,6 +465,72 @@
                                 relationships in the header.</p>
                         </remarks>
                     </elementSpec>
+                    <elementSpec ident="ref" mode="change">
+                        <constraintSpec ident="refTypeReq" scheme="schematron">
+                            <desc>The @type attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:ref">
+                                    <s:assert test="@type">
+                                        The element must have the @type attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
+                        <attList>
+                            <attDef ident="type" mode="replace" usage="rec">
+                                <valList type="closed">
+                                    <valItem ident="confirmAct">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#61">VID
+                                            51</ref>. the reference to the act which is the
+                                            subject of the confirmation.</desc>
+                                    </valItem>
+                                    <valItem ident="mentioned">
+                                        <desc>Any document to which reference is made in a text,
+                                            without having a direct legal role in relation to the
+                                            provisions of the act which mentions it.</desc>
+                                    </valItem>
+                                    <valItem ident="unknown">
+                                        <desc>Act mentioned in a document without it being possible
+                                            to determine his or her role, for example because of a
+                                            gap.</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <!-- Using TEI to index entities -->
+                    <constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//*[@nymRef]">
+                                <s:assert test="id(substring-after(@nymRef,'#'))">
+                                    The value of @nymRef must match an @xml:id
+                                </s:assert>
+                            </s:rule>                                
+                        </constraint>
+                    </constraintSpec>
+                    <elementSpec ident="roleName" mode="change">
+                        <attList>
+                            <attDef ident="nymRef" mode="change" usage="req">
+                                <desc>This attribute is necessary to attach this element to the
+                                    referential entities to which it applies.</desc>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="placeName" mode="change">
+                        <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
+                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <constraint>
+                                <s:rule context="//tei:body//tei:placeName">
+                                    <s:assert test="@nymRef">
+                                        The element must have the @nymRef attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
+                        <attList>
+                            <attDef ident="nymRef" mode="change" usage="rec"/>
+                        </attList>
+                    </elementSpec>
                     <elementSpec ident="measure" mode="change">
                         <attList>
                             <attDef ident="unit" mode="replace" usage="req">
@@ -532,93 +551,79 @@
                             </s:rule>                                
                         </constraint>
                     </constraintSpec>
-                    <elementSpec ident="diploPart" mode="change">
-                        <attList>
-                            <attDef ident="type" mode="change" usage="req">
-                                <valList mode="change" type="closed">
-                                    <valItem ident="appartClause" mode="add">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/#204">VID
-                                                204</ref>. (Appartenance clause). The things and
-                                            rights that belong to a property, often in the form of a
-                                            list accompanying the designation of the
-                                            property.</desc>
-                                    </valItem>
-                                    <valItem ident="explaClause" mode="add">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/#203">VID
-                                                203</ref>. (Explanation clause). Complete a clause
-                                            to clarify its scope or terms.</desc>
-                                    </valItem>
-                                    <valItem ident="laudatio" mode="add">
-                                        <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
-                                                334</ref>. Consent and confirmation of a decision by
-                                            a parent or lord.</desc>
-                                    </valItem>
-                                </valList>
-                            </attDef>
-                        </attList>
-                    </elementSpec>
-                    <elementSpec ident="asset" mode="add">
-                        <desc>Describes the goods and values mentioned in the acts.</desc>
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="model.inter"/>
-                        </classes>
+                    <elementSpec ident="teiCorpus" mode="change">
                         <content>
-                            <macroRef key="macro.specialPara"/>
-                            <classRef key="model.measureLike" minOccurs="0"/>
+                            <sequence>
+                                <elementRef key="teiHeader"/>
+                                <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.describedResource" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                            </sequence>
                         </content>
                         <attList>
-                            <attDef ident="type" mode="replace" usage="req">
-                                <valList type="closed">
-                                    <valItem ident="realEstate">
-                                        <desc>Immovable property such as lands or buildings</desc>
-                                    </valItem>
-                                    <valItem ident="amount">
-                                        <desc>Value in cash or kind, expressed absolutely or
-                                            relatively</desc>
-                                    </valItem>
-                                    <valItem ident="rents">
-                                        <desc>Regular collection of a sum in kind or in cash</desc>
-                                    </valItem>
-                                    <valItem ident="fiefdom">
-                                        <desc>Property or income obtained by investiture</desc>
-                                    </valItem>
-                                    <valItem ident="justice">
-                                        <desc>Power to pass judgments and impose sentences</desc>
-                                    </valItem>
-                                </valList>
-                            </attDef>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                        <remarks>
+                            <p>Since we are working with a database, we do not need to align the TEI
+                                documents in the same teiCorpus file, they only need to be aligned
+                                in the same collection so that an xQuery function can look up the
+                                general metadata of the teiCorpus when useful.</p>
+                        </remarks>
+                    </elementSpec>
+                    <elementSpec ident="TEI" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="delimitation" mode="add">
-                        <desc>Definition of a limit, material or legal, in the possession of a
-                            property.</desc>
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="model.inter"/>
-                        </classes>
-                        <content>
-                            <macroRef key="macro.specialPara"/>
-                        </content>
+                    <elementSpec ident="person" mode="change">
                         <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="personGrp" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="org" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="place" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="bibl" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
+                        </attList>
+                    </elementSpec>
+                    <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//tei:profileDesc//*[@source]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="corpus-uri" value="resolve-uri('../corpus.xml', $base-uri)"/>
+                                <s:assert test="doc-available($corpus-uri)">
+                                    The file ../corpus.xml cannot be found.
+                                </s:assert>
+                                <s:assert test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]">
+                                    The value of @source must match an @xml:id in ../corpus.xml.
+                                </s:assert>
+                            </s:rule>                               
+                        </constraint>
+                    </constraintSpec>
+                    <elementSpec ident="label" mode="change">
+                        <attList>
+                            <attDef ident="xml:id" mode="change" usage="req"/>
                             <attDef ident="type" mode="replace" usage="req">
                                 <valList type="closed">
-                                    <valItem ident="addition">
-                                        <desc>Description of an additional property or a right
-                                            associated with a property</desc>
+                                    <valItem ident="money">
+                                        <desc>Currency</desc>
                                     </valItem>
-                                    <valItem ident="subtraction">
-                                        <desc>Description of an exception within a property, whether
-                                            material, a right of use or a right to exercise
-                                            justice</desc>
-                                    </valItem>
-                                    <valItem ident="boundary">
-                                        <desc>Description of a physical element that separates one
-                                            property from another.</desc>
+                                    <valItem ident="nonCash">
+                                        <desc>Descriptive unit of an in kind</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
