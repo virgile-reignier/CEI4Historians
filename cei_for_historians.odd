@@ -329,6 +329,7 @@
                             <macroRef key="macro.specialPara"/>
                         </content>
                         <constraintSpec ident="passiveMatchXml:id" scheme="schematron">
+                            <desc>The @nymRef attribute must match an @xml:id on the index.</desc>
                             <constraint>
                                 <s:rule context="//*[@passive]">
                                     <s:let name="base-uri" value="base-uri()"/>
@@ -344,6 +345,9 @@
                             </constraint>
                         </constraintSpec>
                         <constraintSpec ident="activeMatchXml:id" scheme="schematron">
+                            <desc>The @nymRef attribute must match an @xml:id on the index.
+                                Unfortunately the rule only applies to the first term in the case of
+                                multiple values.</desc>
                             <constraint>
                                 <s:rule context="//*[@active]">
                                     <s:let name="base-uri" value="base-uri()"/>
@@ -352,7 +356,7 @@
                                     <s:assert test="doc-available($index-person-uri)">The file
                                         index_personnes.xml cannot be found. </s:assert>
                                     <s:assert
-                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]"
+                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')] or document($index-person-uri)//*[@xml:id = substring-after(substring-before(current()/@active, ' '), '#')]"
                                         >The value of @active must match an @xml:id on the index.
                                     </s:assert>
                                 </s:rule>

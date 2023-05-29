@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-05-29T16:44:29Z. .
+Schema generated from ODD source 2023-05-29T16:56:51Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -12431,7 +12431,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
                       value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
                <s:assert test="doc-available($index-person-uri)">The file
                                         index_personnes.xml cannot be found. </s:assert>
-               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]">The value of @active must match an @xml:id on the index.
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')] or document($index-person-uri)//*[@xml:id = substring-after(substring-before(current()/@active, ' '), '#')]">The value of @active must match an @xml:id on the index.
                                     </s:assert>
             </s:rule>
          </pattern>
