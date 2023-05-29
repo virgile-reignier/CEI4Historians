@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-05-15T14:15:17Z. .
+Schema generated from ODD source 2023-05-29T07:40:41Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -12443,8 +12443,13 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@passive]">
-               <s:assert test="id(substring-after(@passive,'#'))"> The value of
-                                        @passive must match an @xml:id </s:assert>
+               <s:let name="base-uri" value="base-uri()"/>
+               <s:let name="index-person-uri"
+                      value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+               <s:assert test="doc-available($index-person-uri)"> The file
+                                        ../index_personnes.xml cannot be found. </s:assert>
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@passive, '#')]"> The value of @passive must match an @xml:id in
+                                        ../index_personnes.xml. </s:assert>
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -12452,12 +12457,17 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@active]">
-               <s:assert test="id(substring-after(@active,'#'))"> The value of
-                                        @active must match an @xml:id </s:assert>
+               <s:let name="base-uri" value="base-uri()"/>
+               <s:let name="index-person-uri"
+                      value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+               <s:assert test="doc-available($index-person-uri)"> The file
+                                        ../index_personnes.xml cannot be found. </s:assert>
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]"> The value of @active must match an @xml:id in
+                                        ../index_personnes.xml. </s:assert>
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-25">
+                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-27">
             <rule context="tei:relation">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13277,7 +13287,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(added span of text) marks the beginning of a longer sequence of text added by an author, scribe, annotator or corrector (see also <code xmlns="http://www.w3.org/1999/xhtml">&lt;add&gt;</code>). [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-26">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-28">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13289,7 +13299,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-27">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-29">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13323,7 +13333,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(damaged span of text) marks the beginning of a longer sequence of text which is damaged in some way but still legible. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-28">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-30">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13335,7 +13345,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-29">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-31">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13357,7 +13367,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deleted span of text) marks the beginning of a longer sequence of text deleted, marked as deleted, or otherwise signaled as superfluous or spurious by an author, scribe, annotator, or corrector. [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-30">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-32">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13369,7 +13379,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-31">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-33">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13542,7 +13552,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-subst-substContents1-constraint-assert-32">
+                  id="cei_for_historians-subst-substContents1-constraint-assert-34">
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -14064,7 +14074,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(catchwords) describes the system used to ensure correct ordering of the quires or similar making up a codex, incunable, or other object typically by means of annotations at the foot of the page. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-33">
+                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-35">
             <rule context="tei:catchwords">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14299,7 +14309,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(second folio) marks the word or words taken from a fixed point in a codex (typically the beginning of the second leaf) in order to provide a unique identifier for it.  [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-34">
+                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-36">
             <rule context="tei:secFol">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14318,7 +14328,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(signatures) contains discussion of the leaf or quire signatures found within a codex or similar object. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-35">
+                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-37">
             <rule context="tei:signatures">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -15652,7 +15662,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-36">
+                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-38">
             <rule context="tei:rdgGrp">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"

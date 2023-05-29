@@ -429,17 +429,39 @@
                         <constraintSpec ident="passiveMatchXml:id" scheme="schematron">
                             <constraint>
                                 <s:rule context="//*[@passive]">
-                                    <s:assert test="id(substring-after(@passive,'#'))"> The value of
-                                        @passive must match an @xml:id </s:assert>
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-person-uri"
+                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-person-uri)"> The file
+                                        ../index_personnes.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@passive, '#')]"
+                                        > The value of @passive must match an @xml:id in
+                                        ../index_personnes.xml. </s:assert>
                                 </s:rule>
+                                <!--<s:rule context="//*[@passive]">
+                                    <s:assert test="id(substring-after(@passive,'#')) -\-\- doc('path/to/index.xml')//entity[@id=current()/@id]"> The value of
+                                        @passive must match an @xml:id </s:assert>
+                                </s:rule>-->
                             </constraint>
                         </constraintSpec>
                         <constraintSpec ident="activeMatchXml:id" scheme="schematron">
                             <constraint>
                                 <s:rule context="//*[@active]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-person-uri"
+                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-person-uri)"> The file
+                                        ../index_personnes.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        ../index_personnes.xml. </s:assert>
+                                </s:rule>
+                                <!--<s:rule context="//*[@active]">
                                     <s:assert test="id(substring-after(@active,'#'))"> The value of
                                         @active must match an @xml:id </s:assert>
-                                </s:rule>
+                                </s:rule>-->
                             </constraint>
                         </constraintSpec>
                         <attList>
