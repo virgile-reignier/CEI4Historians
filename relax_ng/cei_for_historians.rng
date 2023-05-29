@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-05-29T13:52:27Z. .
+Schema generated from ODD source 2023-05-29T14:04:08Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -11155,13 +11155,13 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                   id="cei_for_historians-roleName-nymRefMatchXmlid-constraint-rule-20">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="tokenize(//tei:roleName[@nymRef], ' ')">
+                    context="//tei:roleName[@nymRef]">
                <s:let name="base-uri" value="base-uri()"/>
                <s:let name="index-person-uri"
                       value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
                <s:assert test="doc-available($index-person-uri)"> The file
                                         index_personnes.xml cannot be found. </s:assert>
-               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(., '#')]"> The value of @nymRef contains an entity that does not match any @xml:id in index_personnes.xml. </s:assert>
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"> The value of @nymRef contains an entity that does not match any @xml:id in index_personnes.xml. </s:assert>
             </s:rule>
          </pattern>
          <ref name="att.global.attributes"/>
