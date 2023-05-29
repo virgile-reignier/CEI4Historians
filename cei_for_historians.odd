@@ -435,14 +435,19 @@
                             <desc>The @nymRef attribute must match an @xml:id on the index</desc>
                             <constraint>
                                 <s:rule context="//tei:roleName[@nymRef]">
+                                    <s:let name="refValues" value="tokenize(., '\s+')"/>
                                     <s:let name="base-uri" value="base-uri()"/>
                                     <s:let name="index-person-uri"
                                         value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
                                     <s:assert test="doc-available($index-person-uri)"> The file
                                         index_personnes.xml cannot be found. </s:assert>
-                                    <s:assert
+                                    <s:let name="invalidRefs" value="$refValues[not($index-person-uri//*[@xml:id = .])]"/>
+                                    <s:assert test="not($invalidRefs)">
+                                        The value of @nymRef contains an entity that does not match any @xml:id in index_personnes.xml.
+                                    </s:assert>
+                                    <!--<s:assert
                                         test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
-                                        > The value of @nymRef contains an entity that does not match any @xml:id in index_personnes.xml. </s:assert>
+                                        > The value of @nymRef contains an entity that does not match any @xml:id in index_personnes.xml. </s:assert>-->
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
