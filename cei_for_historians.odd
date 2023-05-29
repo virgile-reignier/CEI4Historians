@@ -463,6 +463,10 @@
                                     <s:assert test="@nymRef"> The element must have the @nymRef
                                         attribute </s:assert>
                                 </s:rule>
+                            </constraint>
+                        </constraintSpec>
+                        <constraintSpec ident="MatchNymRefWIthXml:id" scheme="schematron">
+                            <constraint>
                                 <s:rule context="//tei:placeName[@nymRef]">
                                     <s:let name="base-uri" value="base-uri()"/>
                                     <s:let name="index-place-uri"
