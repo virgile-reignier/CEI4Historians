@@ -555,6 +555,25 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="measure" mode="change">
+                        <constraintSpec ident="unitMatchXml:id" scheme="schematron">
+                            <constraint>
+                                <s:rule context="//*[@unit]">
+                                    <s:assert test="id(@unit)"> The value of @unit must match an @xml:id
+                                    </s:assert>
+                                </s:rule>
+                                <s:rule context="//tei:measure[@unit]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-unit-uri"
+                                        value="resolve-uri('../index/index_unites_mesures.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-unit-uri)"> The file
+                                        index_unites_mesures.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-place-uri)//*[@xml:id = substring-after(current()/@unit, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        index_unites_mesures.xml. </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="unit" mode="replace" usage="req">
                                 <desc>This attribute is necessary to link a unit of measurement to a
@@ -565,14 +584,6 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <constraintSpec ident="unitMatchXml:id" scheme="schematron">
-                        <constraint>
-                            <s:rule context="//*[@unit]">
-                                <s:assert test="id(@unit)"> The value of @unit must match an @xml:id
-                                </s:assert>
-                            </s:rule>
-                        </constraint>
-                    </constraintSpec>
                     <elementSpec ident="teiCorpus" mode="change">
                         <content>
                             <sequence>
