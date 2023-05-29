@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-05-29T13:13:20Z. .
+Schema generated from ODD source 2023-05-29T13:19:49Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -10978,100 +10978,13 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
    </define>
    <define name="orgName">
       <element name="orgName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) Such as persName [13.2.2. Organizational Names]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. Organizational Names]</a:documentation>
          <ref name="macro.phraseSeq"/>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-orgName-orgNameRoleReq-constraint-rule-17">
-            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
-                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="//tei:body//tei:orgName">
-               <s:assert test="@role"> The element must have the @role
-                                        attribute </s:assert>
-            </s:rule>
-         </pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-orgName-orgNameNymRefReq-constraint-rule-18">
-            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
-                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="//tei:body//tei:orgName">
-               <s:assert test="@nymRef"> The element must have the @nymRef
-                                        attribute </s:assert>
-            </s:rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.datable.attributes"/>
          <ref name="att.editLike.attributes"/>
-         <ref name="att.personal.attribute.full"/>
-         <ref name="att.personal.attribute.sort"/>
-         <ref name="att.canonical.attribute.key"/>
-         <ref name="att.canonical.attribute.ref"/>
+         <ref name="att.personal.attributes"/>
          <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute name="role">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>issuer</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?16">VID
-                                                16</a>. The party whose authority issues the document. A lord or judge issuing a ruling is the issuer.</a:documentation>
-                  <value>recipient</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
-                                                17</a>. The party to whom the act of the document is addressed.</a:documentation>
-                  <value>beneficiary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?17">VID
-                                                17</a>. In some cases, the party to whom the act of the document is addressed is not the party whose benefit is intended, in which case the latter should be marked as the beneficiary.</a:documentation>
-                  <value>witness</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?263">VID
-                                                263</a>. Someone who stands as a legal witness of the act, generally through subscription. When something is done in the presence of a judge, the judge is marked as a witness.</a:documentation>
-                  <value>notary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?273">VID
-                                                273</a>. Someone who is a professional redactor of acts, with a legal authority in their preparation. May be the same person as, but separate conceptually from the scribe, who does not bear a legal role in the act.</a:documentation>
-                  <value>promisor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who makes a promise. All kinds of promisors are meant, which may include lessors/lessees, contractors, debtors, etc. </a:documentation>
-                  <value>promisee</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The party of a contract who is on the receiving end a promise. May also be a promisor where there is a mutual trade. </a:documentation>
-                  <value>intervenor</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">cf. <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?66">VID
-                                                66</a>. A party who joins a legal process by the authority of the judicial system, who is not (originally) party to the contract. May be used for legal intervenors, advocates, procurators, accusers (where said are not recipients or beneficiaries), petitioners/sponsors who are not recipients or beneficiaries of the resulting act, judges (where they are not acting as issuers or witnesses), guarantors, etc.</a:documentation>
-                  <value>other</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any legal actor that cannot fit into the other categories here. Please consider submitting an issue on GitHub explaining this use.</a:documentation>
-                  <value>sigillant</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="http://www.cei.lmu.de/VID/VID.php?503">VID
-                                                503</a>. The owner of a seal.</a:documentation>
-                  <value>third</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A third-party is anyone who is not a party to a contract or act but might be affected or involved. </a:documentation>
-                  <value>mentioned</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any organisation mentioned in the act who is not a legal actor, such as a relative or neighbor.</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Organisation mentioned in a document without it being possible to determine his role, for example because of a gap in the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="nymRef">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical
-                  name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -11080,7 +10993,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. Personal Names]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-persName-persNameRoleReq-constraint-rule-19">
+                  id="cei_for_historians-persName-persNameRoleReq-constraint-rule-17">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:persName">
@@ -11089,12 +11002,23 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-persName-persNameNymRefReq-constraint-rule-20">
+                  id="cei_for_historians-persName-persNameNymRefReq-constraint-rule-18">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:persName">
                <s:assert test="@nymRef"> The element must have the @nymRef
                                         attribute </s:assert>
+            </s:rule>
+            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
+                    context="//tei:persName[@nymRef]">
+               <s:let name="base-uri" value="base-uri()"/>
+               <s:let name="index-person-uri"
+                      value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+               <s:assert test="doc-available($index-person-uri)"> The file
+                                        index_personnes.xml cannot be found. </s:assert>
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"> The value of @active must match an @xml:id in
+                                        index_personnes.xml. </s:assert>
             </s:rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -11227,6 +11151,20 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
       <element name="roleName">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(role name) contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank. [13.2.1. Personal Names]</a:documentation>
          <ref name="macro.phraseSeq"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="cei_for_historians-roleName-nymRefMatchXmlid-constraint-rule-20">
+            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
+                    context="//tei:roleName[@nymRef]">
+               <s:let name="base-uri" value="base-uri()"/>
+               <s:let name="index-person-uri"
+                      value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+               <s:assert test="doc-available($index-person-uri)"> The file
+                                        index_personnes.xml cannot be found. </s:assert>
+               <s:assert test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"> The value of @active must match an @xml:id in
+                                        index_personnes.xml. </s:assert>
+            </s:rule>
+         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.personal.attribute.full"/>
          <ref name="att.personal.attribute.sort"/>
@@ -11259,6 +11197,17 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                     context="//tei:body//tei:placeName">
                <s:assert test="@nymRef"> The element must have the @nymRef
                                         attribute </s:assert>
+            </s:rule>
+            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
+                    context="//tei:placeName[@nymRef]">
+               <s:let name="base-uri" value="base-uri()"/>
+               <s:let name="index-place-uri"
+                      value="resolve-uri('../index/index_lieux.xml', $base-uri)"/>
+               <s:assert test="doc-available($index-place-uri)"> The file
+                                        index_lieux.xml cannot be found. </s:assert>
+               <s:assert test="document($index-place-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"> The value of @active must match an @xml:id in
+                                        index_lieux.xml. </s:assert>
             </s:rule>
          </pattern>
          <ref name="att.datable.attributes"/>
@@ -12453,7 +12402,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(relationship) describes any kind of relationship or linkage amongst a specified group of places, events, persons, objects or other items. [13.3.2.3. Personal Relationships]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-relation-passiveMatchXmlid-constraint-rule-22">
+                  id="cei_for_historians-relation-passiveMatchXmlid-constraint-rule-23">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@passive]">
@@ -12467,7 +12416,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-relation-activeMatchXmlid-constraint-rule-23">
+                  id="cei_for_historians-relation-activeMatchXmlid-constraint-rule-24">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@active]">
@@ -12481,7 +12430,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-29">
+                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-33">
             <rule context="tei:relation">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13113,7 +13062,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-facsimile-no_facsimile_text_nodes-constraint-rule-24">
+                  id="cei_for_historians-facsimile-no_facsimile_text_nodes-constraint-rule-25">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13248,7 +13197,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
                 Digital Facsimiles 11.2.2. Embedded Transcription]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-path-pathmustnotbeclosed-constraint-rule-25">
+                  id="cei_for_historians-path-pathmustnotbeclosed-constraint-rule-26">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13301,7 +13250,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(added span of text) marks the beginning of a longer sequence of text added by an author, scribe, annotator or corrector (see also <code xmlns="http://www.w3.org/1999/xhtml">&lt;add&gt;</code>). [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-30">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-34">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13313,7 +13262,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-31">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-35">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13347,7 +13296,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(damaged span of text) marks the beginning of a longer sequence of text which is damaged in some way but still legible. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-32">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-36">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13359,7 +13308,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-33">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-37">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13381,7 +13330,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deleted span of text) marks the beginning of a longer sequence of text deleted, marked as deleted, or otherwise signaled as superfluous or spurious by an author, scribe, annotator, or corrector. [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-34">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-38">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13393,7 +13342,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-35">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-39">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13566,7 +13515,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-subst-substContents1-constraint-assert-36">
+                  id="cei_for_historians-subst-substContents1-constraint-assert-40">
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -14088,7 +14037,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(catchwords) describes the system used to ensure correct ordering of the quires or similar making up a codex, incunable, or other object typically by means of annotations at the foot of the page. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-37">
+                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-41">
             <rule context="tei:catchwords">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14323,7 +14272,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(second folio) marks the word or words taken from a fixed point in a codex (typically the beginning of the second leaf) in order to provide a unique identifier for it.  [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-38">
+                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-42">
             <rule context="tei:secFol">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14342,7 +14291,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(signatures) contains discussion of the leaf or quire signatures found within a codex or similar object. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-39">
+                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-43">
             <rule context="tei:signatures">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -15676,7 +15625,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-40">
+                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-44">
             <rule context="tei:rdgGrp">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -15838,7 +15787,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
             </choice>
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="cei_for_historians-variantEncoding-location-variantEncodingLocation-constraint-rule-26">
+                  id="cei_for_historians-variantEncoding-location-variantEncodingLocation-constraint-rule-27">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -17903,15 +17852,6 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
          <ref name="teiCorpus"/>
       </choice>
    </start>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="cei_for_historians-nymRefMatchXmlid-constraint-rule-27">
-      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
-              xmlns:s="http://purl.oclc.org/dsdl/schematron"
-              context="//*[@nymRef]">
-         <s:assert test="id(substring-after(@nymRef,'#'))"> The value of
-                                    @nymRef must match an @xml:id </s:assert>
-      </s:rule>
-   </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="cei_for_historians-sourceMatchXmlid-constraint-rule-28">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
