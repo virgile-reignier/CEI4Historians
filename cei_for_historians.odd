@@ -189,36 +189,6 @@
                     <!-- Proposals to modify CEI2TEI and using TEI to index entities -->
                     <elementSpec ident="legalActor" mode="delete"/>
                     <elementSpec ident="persName" mode="change">
-                        <constraintSpec ident="persNameRoleReq" scheme="schematron">
-                            <desc>The @role attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:persName">
-                                    <s:assert test="@role"> The element must have the @role
-                                        attribute </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
-                        <constraintSpec ident="persNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text and must match
-                                an @xml:id on the index</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:persName">
-                                    <s:assert test="@nymRef"> The element must have the @nymRef
-                                        attribute </s:assert>
-                                </s:rule>
-                                <s:rule context="//tei:persName[@nymRef]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-person-uri"
-                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-person-uri)"> The file
-                                        index_personnes.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
-                                        > The value of @active must match an @xml:id in
-                                        index_personnes.xml. </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="role" usage="rec" mode="replace">
                                 <desc>This attribute allows to indicate the role of the person in
@@ -317,6 +287,36 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="persNameRoleReq" scheme="schematron">
+                        <desc>The @role attribute is required in the body text</desc>
+                        <constraint>
+                            <s:rule context="//tei:body//tei:persName">
+                                <s:assert test="@role"> The element must have the @role
+                                    attribute </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
+                    <constraintSpec ident="persNameNymRefReq" scheme="schematron">
+                        <desc>The @nymRef attribute is required in the body text and must match
+                            an @xml:id on the index</desc>
+                        <constraint>
+                            <s:rule context="//tei:body//tei:persName">
+                                <s:assert test="@nymRef"> The element must have the @nymRef
+                                    attribute </s:assert>
+                            </s:rule>
+                            <s:rule context="//tei:persName[@nymRef]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-person-uri"
+                                    value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-person-uri)"> The file
+                                    index_personnes.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                    > The value of @active must match an @xml:id in
+                                    index_personnes.xml. </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="relation" mode="change">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
@@ -324,36 +324,6 @@
                         <content>
                             <macroRef key="macro.specialPara"/>
                         </content>
-                        <constraintSpec ident="passiveMatchXml:id" scheme="schematron">
-                            <constraint>
-                                <s:rule context="//*[@passive]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-person-uri"
-                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-person-uri)"> The file
-                                        ../index_personnes.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@passive, '#')]"
-                                        > The value of @passive must match an @xml:id in
-                                        ../index_personnes.xml. </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
-                        <constraintSpec ident="activeMatchXml:id" scheme="schematron">
-                            <constraint>
-                                <s:rule context="//*[@active]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-person-uri"
-                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-person-uri)"> The file
-                                        ../index_personnes.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]"
-                                        > The value of @active must match an @xml:id in
-                                        ../index_personnes.xml. </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="name" mode="replace" usage="req">
                                 <valList type="closed">
@@ -372,16 +342,37 @@
                                 relationships in the header.</p>
                         </remarks>
                     </elementSpec>
+                    <constraintSpec ident="passiveMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//*[@passive]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-person-uri"
+                                    value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-person-uri)"> The file
+                                    ../index_personnes.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-person-uri)//*[@xml:id = substring-after(current()/@passive, '#')]"
+                                    > The value of @passive must match an @xml:id in
+                                    ../index_personnes.xml. </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
+                    <constraintSpec ident="activeMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//*[@active]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-person-uri"
+                                    value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-person-uri)"> The file
+                                    ../index_personnes.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-person-uri)//*[@xml:id = substring-after(current()/@active, '#')]"
+                                    > The value of @active must match an @xml:id in
+                                    ../index_personnes.xml. </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="ref" mode="change">
-                        <constraintSpec ident="refTypeReq" scheme="schematron">
-                            <desc>The @type attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:ref">
-                                    <s:assert test="@type"> The element must have the @type
-                                        attribute </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="type" mode="replace" usage="rec">
                                 <valList type="closed">
@@ -413,6 +404,15 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="refTypeReq" scheme="schematron">
+                        <desc>The @type attribute is required in the body text</desc>
+                        <constraint>
+                            <s:rule context="//tei:body//tei:ref">
+                                <s:assert test="@type"> The element must have the @type
+                                    attribute </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <!-- Using TEI to index entities -->
                     <!--<constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
                         <constraint>
@@ -423,22 +423,6 @@
                         </constraint>
                     </constraintSpec>-->
                     <elementSpec ident="roleName" mode="change">
-                        <constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
-                            <desc>The @nymRef attribute must match an @xml:id on the index</desc>
-                            <constraint>
-                                <s:rule context="//tei:roleName[@nymRef]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-person-uri"
-                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-person-uri)"> The file
-                                        index_personnes.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
-                                        > The value of @active must match an @xml:id in
-                                        index_personnes.xml. </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="nymRef" mode="change" usage="req">
                                 <desc>This attribute is necessary to attach this element to the
@@ -446,52 +430,49 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
+                        <desc>The @nymRef attribute must match an @xml:id on the index</desc>
+                        <constraint>
+                            <s:rule context="//tei:roleName[@nymRef]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-person-uri"
+                                    value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-person-uri)"> The file
+                                    index_personnes.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                    > The value of @active must match an @xml:id in
+                                    index_personnes.xml. </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="placeName" mode="change">
-                        <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text and must match
-                                an @xml:id on the index</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:placeName">
-                                    <s:assert test="@nymRef"> The element must have the @nymRef
-                                        attribute </s:assert>
-                                </s:rule>
-                                <s:rule context="//tei:placeName[@nymRef]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-place-uri"
-                                        value="resolve-uri('../index/index_lieux.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-place-uri)"> The file
-                                        index_lieux.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-place-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
-                                        > The value of @active must match an @xml:id in
-                                        index_lieux.xml. </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
+                        <desc>The @nymRef attribute is required in the body text and must match
+                            an @xml:id on the index</desc>
+                        <constraint>
+                            <s:rule context="//tei:body//tei:placeName">
+                                <s:assert test="@nymRef"> The element must have the @nymRef
+                                    attribute </s:assert>
+                            </s:rule>
+                            <s:rule context="//tei:placeName[@nymRef]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-place-uri"
+                                    value="resolve-uri('../index/index_lieux.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-place-uri)"> The file
+                                    index_lieux.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-place-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                    > The value of @active must match an @xml:id in
+                                    index_lieux.xml. </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="measure" mode="change">
-                        <constraintSpec ident="unitMatchXml:id" scheme="schematron">
-                            <constraint>
-                                <s:rule context="//tei:measure[@unit]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="index-unit-uri"
-                                        value="resolve-uri('../index/index_unites_mesures.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($index-unit-uri)"> The file
-                                        index_unites_mesures.xml cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($index-place-uri)//*[@xml:id = substring-after(current()/@unit, '#')]"
-                                        > The value of @active must match an @xml:id in
-                                        index_unites_mesures.xml. </s:assert>
-                                </s:rule>
-                                <!--<s:rule context="//*[@unit]">
-                                    <s:assert test="id(@unit)"> The value of @unit must match an
-                                        @xml:id </s:assert>
-                                </s:rule>-->
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="unit" mode="replace" usage="req">
                                 <desc>This attribute is necessary to link a unit of measurement to a
@@ -502,6 +483,25 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="unitMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//tei:measure[@unit]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="index-unit-uri"
+                                    value="resolve-uri('../index/index_unites_mesures.xml', $base-uri)"/>
+                                <s:assert test="doc-available($index-unit-uri)"> The file
+                                    index_unites_mesures.xml cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($index-place-uri)//*[@xml:id = substring-after(current()/@unit, '#')]"
+                                    > The value of @active must match an @xml:id in
+                                    index_unites_mesures.xml. </s:assert>
+                            </s:rule>
+                            <!--<s:rule context="//*[@unit]">
+                                    <s:assert test="id(@unit)"> The value of @unit must match an
+                                        @xml:id </s:assert>
+                                </s:rule>-->
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="teiCorpus" mode="change">
                         <content>
                             <sequence>
@@ -552,21 +552,6 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="label" mode="change">
-                        <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
-                            <constraint>
-                                <s:rule context="//tei:profileDesc//*[@source]">
-                                    <s:let name="base-uri" value="base-uri()"/>
-                                    <s:let name="corpus-uri"
-                                        value="resolve-uri('../corpus.xml', $base-uri)"/>
-                                    <s:assert test="doc-available($corpus-uri)"> The file corpus.xml
-                                        cannot be found. </s:assert>
-                                    <s:assert
-                                        test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]"
-                                        > The value of @source must match an @xml:id in corpus.xml.
-                                    </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="xml:id" mode="change" usage="req"/>
                             <attDef ident="type" mode="replace" usage="req">
@@ -581,6 +566,21 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
+                        <constraint>
+                            <s:rule context="//tei:profileDesc//*[@source]">
+                                <s:let name="base-uri" value="base-uri()"/>
+                                <s:let name="corpus-uri"
+                                    value="resolve-uri('../corpus.xml', $base-uri)"/>
+                                <s:assert test="doc-available($corpus-uri)"> The file corpus.xml
+                                    cannot be found. </s:assert>
+                                <s:assert
+                                    test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]"
+                                    > The value of @source must match an @xml:id in corpus.xml.
+                                </s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                 </schemaSpec>
             </div>
         </body>
