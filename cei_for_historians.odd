@@ -54,8 +54,8 @@
                     <item>To avoid separating the people and organizations involved in the act from
                         those merely mentioned, we remove the legalActor tag and take the values of
                         its @type attribute and make them the values of the @role attribute, which
-                        is now required for the persName and orgName tags, adding two new values
-                        "mentioned" and "unknown".</item>
+                        is now required for the persName tags, adding two new values "mentioned" and
+                        "unknown".</item>
                     <item>We add new types to the diploPart tag: "appartClause" to annotate the
                         formulas that accompany property descriptions; "explaClause" to annotate the
                         explanations that expand on the scope and terms of the "dispositio";
@@ -199,11 +199,23 @@
                             </constraint>
                         </constraintSpec>
                         <constraintSpec ident="persNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <desc>The @nymRef attribute is required in the body text and must match
+                                an @xml:id on the index</desc>
                             <constraint>
                                 <s:rule context="//tei:body//tei:persName">
                                     <s:assert test="@nymRef"> The element must have the @nymRef
                                         attribute </s:assert>
+                                </s:rule>
+                                <s:rule context="//tei:persName[@nymRef]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-person-uri"
+                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-person-uri)"> The file
+                                        index_personnes.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        index_personnes.xml. </s:assert>
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
@@ -305,120 +317,6 @@
                             <attDef ident="nymRef" mode="change" usage="rec"/>
                         </attList>
                     </elementSpec>
-                    <elementSpec ident="orgName" mode="change">
-                        <desc>Such as persName</desc>
-                        <constraintSpec ident="orgNameRoleReq" scheme="schematron">
-                            <desc>The @role attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:orgName">
-                                    <s:assert test="@role"> The element must have the @role
-                                        attribute </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
-                        <constraintSpec ident="orgNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text</desc>
-                            <constraint>
-                                <s:rule context="//tei:body//tei:orgName">
-                                    <s:assert test="@nymRef"> The element must have the @nymRef
-                                        attribute </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
-                        <attList>
-                            <attDef ident="role" usage="rec" mode="replace">
-                                <valList type="closed">
-                                    <valItem ident="issuer">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?16">VID
-                                                16</ref>. The party whose authority issues the
-                                            document. A lord or judge issuing a ruling is the
-                                            issuer. </desc>
-                                    </valItem>
-                                    <valItem ident="recipient">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
-                                                17</ref>. The party to whom the act of the document
-                                            is addressed.</desc>
-                                    </valItem>
-                                    <valItem ident="beneficiary">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?17">VID
-                                                17</ref>. In some cases, the party to whom the act
-                                            of the document is addressed is not the party whose
-                                            benefit is intended, in which case the latter should be
-                                            marked as the beneficiary.</desc>
-                                    </valItem>
-                                    <valItem ident="witness">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?263">VID
-                                                263</ref>. Someone who stands as a legal witness of
-                                            the act, generally through subscription. When something
-                                            is done in the presence of a judge, the judge is marked
-                                            as a witness. </desc>
-                                    </valItem>
-                                    <valItem ident="notary">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?273">VID
-                                                273</ref>. Someone who is a professional redactor of
-                                            acts, with a legal authority in their preparation. May
-                                            be the same person as, but separate conceptually from
-                                            the scribe, who does not bear a legal role in the
-                                            act.</desc>
-                                    </valItem>
-                                    <valItem ident="promisor">
-                                        <desc> The party of a contract who makes a promise. All
-                                            kinds of promisors are meant, which may include
-                                            lessors/lessees, contractors, debtors, etc. </desc>
-                                    </valItem>
-                                    <valItem ident="promisee">
-                                        <desc> The party of a contract who is on the receiving end a
-                                            promise. May also be a promisor where there is a mutual
-                                            trade. </desc>
-                                    </valItem>
-                                    <valItem ident="intervenor">
-                                        <desc> cf. <ref
-                                                target="http://www.cei.lmu.de/VID/VID.php?66">VID
-                                                66</ref>. A party who joins a legal process by the
-                                            authority of the judicial system, who is not
-                                            (originally) party to the contract. May be used for
-                                            legal intervenors, advocates, procurators, accusers
-                                            (where said are not recipients or beneficiaries),
-                                            petitioners/sponsors who are not recipients or
-                                            beneficiaries of the resulting act, judges (where they
-                                            are not acting as issuers or witnesses), guarantors,
-                                            etc. </desc>
-                                    </valItem>
-                                    <valItem ident="other">
-                                        <desc> Any legal actor that cannot fit into the other
-                                            categories here. Please consider submitting an issue on
-                                            GitHub explaining this use.</desc>
-                                    </valItem>
-                                    <valItem ident="sigillant">
-                                        <desc>
-                                            <ref target="http://www.cei.lmu.de/VID/VID.php?503">VID
-                                                503</ref>. The owner of a seal.</desc>
-                                    </valItem>
-                                    <valItem ident="third">
-                                        <desc> A third-party is anyone who is not a party to a
-                                            contract or act but might be affected or involved.
-                                        </desc>
-                                    </valItem>
-                                    <!-- Beginning of the new values -->
-                                    <valItem ident="mentioned">
-                                        <desc>Any organisation mentioned in the act who is not a
-                                            legal actor, such as a relative or neighbor.</desc>
-                                    </valItem>
-                                    <valItem ident="unknown">
-                                        <desc>Organisation mentioned in a document without it being
-                                            possible to determine his role, for example because of a
-                                            gap in the document</desc>
-                                    </valItem>
-                                </valList>
-                            </attDef>
-                            <attDef ident="nymRef" mode="change" usage="rec"/>
-                        </attList>
-                    </elementSpec>
                     <elementSpec ident="relation" mode="change">
                         <classes mode="change">
                             <memberOf key="model.persNamePart"/>
@@ -439,10 +337,6 @@
                                         > The value of @passive must match an @xml:id in
                                         ../index_personnes.xml. </s:assert>
                                 </s:rule>
-                                <!--<s:rule context="//*[@passive]">
-                                    <s:assert test="id(substring-after(@passive,'#')) -\-\- doc('path/to/index.xml')//entity[@id=current()/@id]"> The value of
-                                        @passive must match an @xml:id </s:assert>
-                                </s:rule>-->
                             </constraint>
                         </constraintSpec>
                         <constraintSpec ident="activeMatchXml:id" scheme="schematron">
@@ -458,10 +352,6 @@
                                         > The value of @active must match an @xml:id in
                                         ../index_personnes.xml. </s:assert>
                                 </s:rule>
-                                <!--<s:rule context="//*[@active]">
-                                    <s:assert test="id(substring-after(@active,'#'))"> The value of
-                                        @active must match an @xml:id </s:assert>
-                                </s:rule>-->
                             </constraint>
                         </constraintSpec>
                         <attList>
@@ -524,15 +414,31 @@
                         </attList>
                     </elementSpec>
                     <!-- Using TEI to index entities -->
-                    <constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
+                    <!--<constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
                         <constraint>
                             <s:rule context="//*[@nymRef]">
                                 <s:assert test="id(substring-after(@nymRef,'#'))"> The value of
                                     @nymRef must match an @xml:id </s:assert>
                             </s:rule>
                         </constraint>
-                    </constraintSpec>
+                    </constraintSpec>-->
                     <elementSpec ident="roleName" mode="change">
+                        <constraintSpec ident="nymRefMatchXml:id" scheme="schematron">
+                            <desc>The @nymRef attribute must match an @xml:id on the index</desc>
+                            <constraint>
+                                <s:rule context="//tei:roleName[@nymRef]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-person-uri"
+                                        value="resolve-uri('../index/index_personnes.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-person-uri)"> The file
+                                        index_personnes.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-person-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        index_personnes.xml. </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="nymRef" mode="change" usage="req">
                                 <desc>This attribute is necessary to attach this element to the
@@ -542,11 +448,23 @@
                     </elementSpec>
                     <elementSpec ident="placeName" mode="change">
                         <constraintSpec ident="placeNameNymRefReq" scheme="schematron">
-                            <desc>The @nymRef attribute is required in the body text</desc>
+                            <desc>The @nymRef attribute is required in the body text and must match
+                                an @xml:id on the index</desc>
                             <constraint>
                                 <s:rule context="//tei:body//tei:placeName">
                                     <s:assert test="@nymRef"> The element must have the @nymRef
                                         attribute </s:assert>
+                                </s:rule>
+                                <s:rule context="//tei:placeName[@nymRef]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-place-uri"
+                                        value="resolve-uri('../index/index_lieux.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-place-uri)"> The file
+                                        index_lieux.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-place-uri)//*[@xml:id = substring-after(current()/@nymRef, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        index_lieux.xml. </s:assert>
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
@@ -555,6 +473,25 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="measure" mode="change">
+                        <constraintSpec ident="unitMatchXml:id" scheme="schematron">
+                            <constraint>
+                                <s:rule context="//tei:measure[@unit]">
+                                    <s:let name="base-uri" value="base-uri()"/>
+                                    <s:let name="index-unit-uri"
+                                        value="resolve-uri('../index/index_unites_mesures.xml', $base-uri)"/>
+                                    <s:assert test="doc-available($index-unit-uri)"> The file
+                                        index_unites_mesures.xml cannot be found. </s:assert>
+                                    <s:assert
+                                        test="document($index-place-uri)//*[@xml:id = substring-after(current()/@unit, '#')]"
+                                        > The value of @active must match an @xml:id in
+                                        index_unites_mesures.xml. </s:assert>
+                                </s:rule>
+                                <!--<s:rule context="//*[@unit]">
+                                    <s:assert test="id(@unit)"> The value of @unit must match an
+                                        @xml:id </s:assert>
+                                </s:rule>-->
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="unit" mode="replace" usage="req">
                                 <desc>This attribute is necessary to link a unit of measurement to a
@@ -565,14 +502,6 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <constraintSpec ident="unitMatchXml:id" scheme="schematron">
-                        <constraint>
-                            <s:rule context="//*[@unit]">
-                                <s:assert test="id(@unit)"> The value of @unit must match an @xml:id
-                                </s:assert>
-                            </s:rule>
-                        </constraint>
-                    </constraintSpec>
                     <elementSpec ident="teiCorpus" mode="change">
                         <content>
                             <sequence>
