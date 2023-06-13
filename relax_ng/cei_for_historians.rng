@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-06-13T09:39:16Z. .
+Schema generated from ODD source 2023-06-13T12:03:36Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17859,7 +17859,16 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
       </choice>
    </start>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="cei_for_historians-sourceMatchXmlid-constraint-rule-28">
+            id="cei_for_historians-locationMatchXmlid-constraint-rule-28">
+      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+              xmlns:s="http://purl.oclc.org/dsdl/schematron"
+              context="//tei:place//tei:location">
+         <s:assert test="not(contains(current()/@corresp, '#')) or //*[@xml:id = substring-after(current()/@corresp, '#')]">The value of @corresp must match an @xml:id in this
+                                    file.</s:assert>
+      </s:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="cei_for_historians-sourceMatchXmlid-constraint-rule-29">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               context="//tei:profileDesc//*[@source]">

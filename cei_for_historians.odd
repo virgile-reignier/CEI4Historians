@@ -467,7 +467,7 @@
                             </constraint>
                         </constraintSpec>
                         <constraintSpec ident="placeNameNymRefMatchXml:id" scheme="schematron">
-                            <desc>@nymRef and must match an @xml:id on the index</desc>
+                            <desc>@nymRef must match an @xml:id on the index</desc>
                             <constraint>
                                 <s:rule context="//tei:placeName[@nymRef]">
                                     <s:let name="base-uri" value="base-uri()"/>
@@ -488,6 +488,7 @@
                     </elementSpec>
                     <elementSpec ident="measure" mode="change">
                         <constraintSpec ident="unitMatchXml:id" scheme="schematron">
+                            <desc>@unit must match an @xml:id on the index</desc>
                             <constraint>
                                 <s:rule context="//tei:measure[@unit]">
                                     <s:let name="base-uri" value="base-uri()"/>
@@ -556,12 +557,24 @@
                             <attDef ident="xml:id" mode="change" usage="req"/>
                         </attList>
                     </elementSpec>
+                    <constraintSpec ident="locationMatchXml:id" scheme="schematron">
+                        <desc>@corresp in location tag must match an @xml:id on the index</desc>
+                        <constraint>
+                            <s:rule context="//tei:place//tei:location">
+                                <s:assert
+                                    test="not(contains(current()/@corresp, '#')) or //*[@xml:id = substring-after(current()/@corresp, '#')]"
+                                    >The value of @corresp must match an @xml:id in this
+                                    file.</s:assert>
+                            </s:rule>
+                        </constraint>
+                    </constraintSpec>
                     <elementSpec ident="bibl" mode="change">
                         <attList>
                             <attDef ident="xml:id" mode="change" usage="req"/>
                         </attList>
                     </elementSpec>
                     <constraintSpec ident="sourceMatchXml:id" scheme="schematron">
+                        <desc>@source must match an @xml:id on the corpus</desc>
                         <constraint>
                             <s:rule context="//tei:profileDesc//*[@source]">
                                 <s:let name="base-uri" value="base-uri()"/>
