@@ -65,6 +65,6 @@ declare function cei:executeAllVerifications($collectionName as xs:string) as it
 {
   let $result_1 := cei:findDuplicateIds($collectionName)
   let $result_2 := cei:checkInvalidReferences($collectionName)
-  let $result_3 := cei:checkInvalidReferences($collectionName)
+  let $result_3 := cei:checkInvalidCorresps($collectionName)
   return ($result_1, $result_2, $result_3)
 };
