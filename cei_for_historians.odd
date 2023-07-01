@@ -79,7 +79,7 @@
                     unique; the comparison of references contained in the dedicated attributes does
                     not apply from the second reference onwards in the event of a list.</p>
                 <p>Checks that could not be carried out using schematron rules have been written in
-                    the form of xQuery queries.</p>
+                    the form of xQuery queries, available in the same repository.</p>
                 <schemaSpec ident="cei_for_historians"
                     source="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/ODD_compiled_tei_cei.xml"
                     start="TEI teiCorpus">
