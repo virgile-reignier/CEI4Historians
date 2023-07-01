@@ -9,7 +9,7 @@ Our project is based on the work of the [Charters Encoding Initiative](http://ww
 
 ## Objectives
 
-- annotate the people, places and assets mentioned in the documents studied
+- annotate the people, places and assets mentioned in the documents
 - associate people, places and units of measurement with an index to disambiguate them
 - produce quantitative analyses that take into account the place of these elements in diplomatic discourse
 
