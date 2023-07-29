@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-06-13T15:06:22Z. .
+Schema generated from ODD source 2023-07-29T09:30:49Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -3819,6 +3819,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="p"/>
          <ref name="ab"/>
          <ref name="legend"/>
+         <ref name="asset"/>
       </choice>
    </define>
    <define name="model.pLike_alternation">
@@ -3826,12 +3827,14 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="p"/>
          <ref name="ab"/>
          <ref name="legend"/>
+         <ref name="asset"/>
       </choice>
    </define>
    <define name="model.pLike_sequence">
       <ref name="p"/>
       <ref name="ab"/>
       <ref name="legend"/>
+      <ref name="asset"/>
    </define>
    <define name="model.pLike_sequenceOptional">
       <optional>
@@ -3842,6 +3845,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </optional>
       <optional>
          <ref name="legend"/>
+      </optional>
+      <optional>
+         <ref name="asset"/>
       </optional>
    </define>
    <define name="model.pLike_sequenceOptionalRepeatable">
@@ -3854,6 +3860,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <zeroOrMore>
          <ref name="legend"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="asset"/>
+      </zeroOrMore>
    </define>
    <define name="model.pLike_sequenceRepeatable">
       <oneOrMore>
@@ -3864,6 +3873,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </oneOrMore>
       <oneOrMore>
          <ref name="legend"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="asset"/>
       </oneOrMore>
    </define>
    <define name="model.stageLike">
@@ -17897,9 +17909,9 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
               context="//tei:profileDesc//*[@source]">
          <s:let name="base-uri" value="base-uri()"/>
          <s:let name="corpus-uri" value="resolve-uri('../corpus.xml', $base-uri)"/>
-         <s:assert test="doc-available($corpus-uri)"> The file ../corpus.xml
+         <s:assert test="doc-available($corpus-uri)"> The file corpus.xml
                                     cannot be found. </s:assert>
-         <s:assert test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]"> The value of @source must match an @xml:id in ../corpus.xml.
+         <s:assert test="document($corpus-uri)//*[@xml:id = substring-after(current()/@source, '#')]"> The value of @source must match an @xml:id in corpus.xml.
                                 </s:assert>
       </s:rule>
    </pattern>
