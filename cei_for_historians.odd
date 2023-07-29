@@ -135,7 +135,7 @@
                             <memberOf key="att.global"/>
                             <memberOf key="att.typed"/>
                             <memberOf key="model.inter"/>
-                            <memberOf key="model.pLike"/>
+                            <memberOf key="model.placeNamePart"/>
                         </classes>
                         <content>
                             <alternate>
