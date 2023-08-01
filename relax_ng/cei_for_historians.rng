@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-07-29T09:39:13Z. .
+Schema generated from ODD source 2023-08-01T07:28:21Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -4072,6 +4072,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="district"/>
          <ref name="geogName"/>
          <ref name="asset"/>
+         <ref name="delimitation"/>
       </choice>
    </define>
    <define name="model.placeNamePart_alternation">
@@ -4084,6 +4085,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="district"/>
          <ref name="geogName"/>
          <ref name="asset"/>
+         <ref name="delimitation"/>
       </choice>
    </define>
    <define name="model.placeNamePart_sequence">
@@ -4095,6 +4097,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <ref name="district"/>
       <ref name="geogName"/>
       <ref name="asset"/>
+      <ref name="delimitation"/>
    </define>
    <define name="model.placeNamePart_sequenceOptional">
       <optional>
@@ -4120,6 +4123,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </optional>
       <optional>
          <ref name="asset"/>
+      </optional>
+      <optional>
+         <ref name="delimitation"/>
       </optional>
    </define>
    <define name="model.placeNamePart_sequenceOptionalRepeatable">
@@ -4147,6 +4153,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <zeroOrMore>
          <ref name="asset"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="delimitation"/>
+      </zeroOrMore>
    </define>
    <define name="model.placeNamePart_sequenceRepeatable">
       <oneOrMore>
@@ -4172,6 +4181,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </oneOrMore>
       <oneOrMore>
          <ref name="asset"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="delimitation"/>
       </oneOrMore>
    </define>
    <define name="model.placeStateLike">
@@ -14404,6 +14416,9 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
                   <ref name="asset"/>
                </optional>
                <optional>
+                  <ref name="delimitation"/>
+               </optional>
+               <optional>
                   <ref name="institution"/>
                </optional>
                <optional>
@@ -14496,6 +14511,9 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
             </optional>
             <optional>
                <ref name="asset"/>
+            </optional>
+            <optional>
+               <ref name="delimitation"/>
             </optional>
             <optional>
                <ref name="institution"/>
