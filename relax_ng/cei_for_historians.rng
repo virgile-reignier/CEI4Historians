@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-08-01T07:28:21Z. .
+Schema generated from ODD source 2023-08-26T07:09:35Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -6033,8 +6033,8 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:ref">
-               <s:assert test="@corresp">The element must have the @corresp attribute
-                                    </s:assert>
+               <s:assert test="@corresp">The element must have the @corresp
+                                        attribute </s:assert>
             </s:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -6061,6 +6061,10 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                      <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#51">VID
                                                 51a</a>. the reference to the act which is the subject of the confirmation.</a:documentation>
+                  <value>inserted</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#66">VID
+                                                66</a>. transcription of an earlier document, intended to clarify, complete and give full legal value to the document in which it is transcribed.</a:documentation>
                   <value>inspeximé</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                      <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#67">VID

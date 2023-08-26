@@ -424,8 +424,8 @@
                             <desc>The @corresp attribute is required in the body text</desc>
                             <constraint>
                                 <s:rule context="//tei:body//tei:ref">
-                                    <s:assert test="@corresp">The element must have the @corresp attribute
-                                    </s:assert>
+                                    <s:assert test="@corresp">The element must have the @corresp
+                                        attribute </s:assert>
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
@@ -436,6 +436,12 @@
                                         <desc><ref target="http://www.cei.lmu.de/VID/#51">VID
                                                 51a</ref>. the reference to the act which is the
                                             subject of the confirmation.</desc>
+                                    </valItem>
+                                    <valItem ident="inserted">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#66">VID
+                                                66</ref>. transcription of an earlier document,
+                                            intended to clarify, complete and give full legal value
+                                            to the document in which it is transcribed.</desc>
                                     </valItem>
                                     <valItem ident="inspeximé">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#67">VID
