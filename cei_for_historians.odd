@@ -350,9 +350,9 @@
                                     <s:assert test="doc-available($index-persons-uri)">The file
                                         index_persons.xml cannot be found. </s:assert>
                                     <s:assert
-                                        test="document($index-persons-uri)//*[@xml:id = substring-after(current()/@passive, '#')]"
-                                        >The value of @passive must match an @xml:id on the
-                                        index.</s:assert>
+                                        test="document($index-persons-uri)//*[@xml:id = substring-after(current()/@passive, '#')] or document($index-persons-uri)//*[@xml:id = substring-after(substring-before(current()/@passive, ' '), '#')]"
+                                        >The value of @active must match an @xml:id on the index.
+                                    </s:assert>
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
