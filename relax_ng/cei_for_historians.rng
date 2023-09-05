@@ -5,11 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-<<<<<<< Updated upstream
-Schema generated from ODD source 2023-08-26T07:09:35Z. .
-=======
-Schema generated from ODD source 2023-09-05T18:41:18Z. .
->>>>>>> Stashed changes
+Schema generated from ODD source 2023-09-05T18:48:14Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
