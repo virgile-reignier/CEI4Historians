@@ -162,6 +162,11 @@
                                     <valItem ident="justice">
                                         <desc>Power to pass judgments and impose sentences</desc>
                                     </valItem>
+                                    <valItem ident="privilege">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
+                                            395</ref>. Derogation from common rules granted to an individual
+                                            or group</desc>
+                                    </valItem>
                                 </valList>
                             </attDef>
                         </attList>
