@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-09-05T18:48:14Z. .
+Schema generated from ODD source 2024-07-29T06:09:21Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17899,6 +17899,10 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Property or income obtained by investiture</a:documentation>
                <value>justice</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Power to pass judgments and impose sentences</a:documentation>
+               <value>privilege</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#334">VID
+                                            395</a>. Derogation from common rules granted to an individual or group</a:documentation>
             </choice>
          </attribute>
          <empty/>
