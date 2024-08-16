@@ -164,8 +164,8 @@
                                     </valItem>
                                     <valItem ident="privilege">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
-                                            395</ref>. Derogation from common rules granted to an individual
-                                            or group</desc>
+                                                395</ref>. Derogation from common rules granted to
+                                            an individual or group</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
@@ -447,6 +447,13 @@
                                                 66</ref>. transcription of an earlier document,
                                             intended to clarify, complete and give full legal value
                                             to the document in which it is transcribed.</desc>
+                                    </valItem>
+                                    <valItem ident="appended">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#70">VID
+                                                70</ref>. Addition of another document, in the form
+                                            of a copy or original, following or attached, intended
+                                            to clarify, complete and give full legal value to the
+                                            deed.</desc>
                                     </valItem>
                                     <valItem ident="inspeximé">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#67">VID
