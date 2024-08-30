@@ -127,6 +127,12 @@
                                             the parties as part of the execution of the act, for
                                             example for a donation, a confession, etc.</desc>
                                     </valItem>
+                                    <valItem ident="donatio" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#425">VID
+                                                425</ref>. (Donation clause). Clause adding a gift
+                                            of assets to the realisations of the act</desc>
+                                    </valItem>
                                     <valItem ident="recoFeodi" mode="add">
                                         <desc>
                                             <ref target="http://www.cei.lmu.de/VID/#475">VID
