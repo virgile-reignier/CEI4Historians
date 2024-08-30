@@ -59,7 +59,7 @@
                     <item>We add new types to the diploPart tag: "appartClause" to annotate the
                         formulas that accompany property descriptions; "explaClause" to annotate the
                         explanations that expand on the scope and terms of the "dispositio";
-                        "laudatio" to annotate the confirmations that are added to the act.</item>
+                        "laudatio" to annotate the confirmations that are added to the act; etc.</item>
                     <item>We add new tags: "asset" to annotate the goods and values mentioned in the
                         acts; "delimitation" to annotate the description of the limits in a
                         property.</item>
