@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-08-30T11:46:21Z. . 
+Schema generated from ODD source 2024-08-30T12:12:04Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -17844,7 +17844,13 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                   <a xmlns="http://www.w3.org/1999/xhtml"
                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
                      href="http://www.cei.lmu.de/VID/#425">VID
-                                                425</a>. (Donation clause). Clause adding a gift of assets to the realisations of the act</a:documentation>
+                                                425</a>. (Donation clause). Clause adding a gift of assets to the realisations of the act.</a:documentation>
+               <value>confirmatio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml"
+                     xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                     href="http://www.cei.lmu.de/VID/#51">VID
+                                            51</a>. (Confirmation clause). Clause including confirmation of another decision in an act.</a:documentation>
                <value>recoFeodi</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                   <a xmlns="http://www.w3.org/1999/xhtml"
