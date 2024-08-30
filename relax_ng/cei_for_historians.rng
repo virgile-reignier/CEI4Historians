@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-08-30T08:32:05Z. . 
+Schema generated from ODD source 2024-08-30T09:20:35Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -17851,6 +17851,8 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
                      href="http://www.cei.lmu.de/VID/#476">VID
                                                 476</a>. (Enumeration clause). Part of the act in which a vassal details the assets for which he makes homage or confession.</a:documentation>
+               <value>comebackClause</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Comeback clause). Clause by which a party is asked to come back at a later date to add a supplement to the act, for example to give details of the assets mentioned.</a:documentation>
                <value>laudatio</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                   <a xmlns="http://www.w3.org/1999/xhtml"

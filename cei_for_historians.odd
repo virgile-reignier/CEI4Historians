@@ -141,6 +141,12 @@
                                             which a vassal details the assets for which he makes
                                             homage or confession.</desc>
                                     </valItem>
+                                    <valItem ident="comebackClause" mode="add">
+                                        <desc> (Comeback clause). Clause by which a party is asked
+                                            to come back at a later date to add a supplement to the
+                                            act, for example to give details of the assets
+                                            mentioned.</desc>
+                                    </valItem>
                                     <valItem ident="laudatio" mode="add">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
                                                 334</ref>. Consent and confirmation of a decision by
