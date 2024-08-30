@@ -120,6 +120,27 @@
                                                 203</ref>. (Explanation clause). Complete a clause
                                             to clarify its scope or terms.</desc>
                                     </valItem>
+                                    <valItem ident="homagium" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#474">VID
+                                                474</ref>. (Homage clause). Homage made by one of
+                                            the parties as part of the execution of the act, for
+                                            example for a donation, a confession, etc.</desc>
+                                    </valItem>
+                                    <valItem ident="recoFeodi" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#475">VID
+                                                475</ref>. (Confession clause). Part of the act in
+                                            which a vassal recognises that he holds his property
+                                            from his lord.</desc>
+                                    </valItem>
+                                    <valItem ident="descFeodi" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#476">VID
+                                                476</ref>. (Enumeration clause). Part of the act in
+                                            which a vassal details the assets for which he makes
+                                            homage or confession.</desc>
+                                    </valItem>
                                     <valItem ident="laudatio" mode="add">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#334">VID
                                                 334</ref>. Consent and confirmation of a decision by
