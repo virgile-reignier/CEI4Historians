@@ -455,14 +455,11 @@
                                             to clarify, complete and give full legal value to the
                                             deed.</desc>
                                     </valItem>
-                                    <valItem ident="inspeximé">
-                                        <desc><ref target="http://www.cei.lmu.de/VID/#67">VID
-                                                67b</ref>. Act copied from an earlier document,
-                                            recognised as authentic by an authority.</desc>
-                                    </valItem>
-                                    <valItem ident="notarialCopy">
-                                        <desc><ref target="http://www.cei.lmu.de/VID/#59">VID
-                                                59</ref>. Act copied by a notary.</desc>
+                                    <valItem ident="original">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#42">VID
+                                                42</ref>. Text reproduced from an original document
+                                            in another document in order to transfer its legal
+                                            validity.</desc>
                                     </valItem>
                                     <valItem ident="mentioned">
                                         <desc>Any document to which reference is made in a text,

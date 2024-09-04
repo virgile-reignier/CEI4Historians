@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-08-16T12:00:57Z. .
+Schema generated from ODD source 2024-09-04T08:39:07Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -6069,14 +6069,10 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                      <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#70">VID
                                                 70</a>. Addition of another document, in the form of a copy or original, following or attached, intended to clarify, complete and give full legal value to the deed.</a:documentation>
-                  <value>inspeximé</value>
+                  <value>original</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#67">VID
-                                                67b</a>. Act copied from an earlier document, recognised as authentic by an authority.</a:documentation>
-                  <value>notarialCopy</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#59">VID
-                                                59</a>. Act copied by a notary.</a:documentation>
+                     <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#42">VID
+                                                42</a>. Text reproduced from an original document in another document in order to transfer its legal validity.</a:documentation>
                   <value>mentioned</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any document to which reference is made in a text, without having a direct legal role in relation to the provisions of the act which mentions it.</a:documentation>
                   <value>unknown</value>
