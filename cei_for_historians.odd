@@ -59,7 +59,8 @@
                     <item>We add new types to the diploPart tag: "appartClause" to annotate the
                         formulas that accompany property descriptions; "explaClause" to annotate the
                         explanations that expand on the scope and terms of the "dispositio";
-                        "laudatio" to annotate the confirmations that are added to the act; etc.</item>
+                        "laudatio" to annotate the confirmations that are added to the act;
+                        etc.</item>
                     <item>We add new tags: "asset" to annotate the goods and values mentioned in the
                         acts; "delimitation" to annotate the description of the limits in a
                         property.</item>
@@ -473,6 +474,16 @@
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
+                        <constraintSpec ident="refAnaReq" scheme="schematron">
+                            <desc>The @ana attribute is required when @corresp doesn't refer to
+                                another text</desc>
+                            <constraint>
+                                <s:rule context="not(contains(./@corresp, '#'))">
+                                    <s:assert test="@ana">The element must have the @ana attribute
+                                    </s:assert>
+                                </s:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="type" mode="replace" usage="rec">
                                 <valList type="closed">
@@ -487,6 +498,13 @@
                                             intended to clarify, complete and give full legal value
                                             to the document in which it is transcribed.</desc>
                                     </valItem>
+                                    <valItem ident="extract">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#87">VID
+                                                87</ref>. transcription of certain elements of an
+                                            earlier document, intended to clarify, complete and give
+                                            full legal value to the document in which it is
+                                            transcribed.</desc>
+                                    </valItem>
                                     <valItem ident="appended">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#70">VID
                                                 70</ref>. Addition of another document, in the form
@@ -494,9 +512,9 @@
                                             to clarify, complete and give full legal value to the
                                             deed.</desc>
                                     </valItem>
-                                    <valItem ident="original">
-                                        <desc><ref target="http://www.cei.lmu.de/VID/#42">VID
-                                                42</ref>. Text reproduced from an original document
+                                    <valItem ident="inspeximé">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#67">VID
+                                                67</ref>. Text reproduced from an original document
                                             in another document in order to transfer its legal
                                             validity.</desc>
                                     </valItem>
