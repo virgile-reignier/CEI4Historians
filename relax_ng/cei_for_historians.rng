@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-11-02T12:37:17Z. . 
+Schema generated from ODD source 2024-11-02T12:46:10Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -6079,16 +6079,6 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-ref-refAnaReq-constraint-rule-15">
-            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
-                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="not(contains(./@corresp, '#'))">
-               <s:assert test="@ana">The element must have the @ana attribute
-                                    </s:assert>
-            </s:rule>
-         </pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
                   id="cei_for_historians-ref-refAtts-constraint-report-10">
             <rule context="tei:ref">
                <report xmlns:s="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only
@@ -6195,7 +6185,7 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-list-gloss-list-must-have-labels-constraint-rule-16">
+                  id="cei_for_historians-list-gloss-list-must-have-labels-constraint-rule-15">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -7071,7 +7061,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-lg-atleast1oflggapl-constraint-assert-16">
+                  id="cei_for_historians-lg-atleast1oflggapl-constraint-assert-15">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -8146,7 +8136,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-citeStructure-match-citestructure-outer-match-constraint-rule-17">
+                  id="cei_for_historians-citeStructure-match-citestructure-outer-match-constraint-rule-16">
             <rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
                   xmlns:xi="http://www.w3.org/2001/XInclude"
                   context="tei:citeStructure[not(parent::tei:citeStructure)]">
@@ -8156,7 +8146,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-citeStructure-match-citestructure-inner-match-constraint-rule-18">
+                  id="cei_for_historians-citeStructure-match-citestructure-inner-match-constraint-rule-17">
             <rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
                   xmlns:xi="http://www.w3.org/2001/XInclude"
                   context="tei:citeStructure[parent::tei:citeStructure]">
@@ -8964,7 +8954,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-link-linkTargets3-constraint-assert-19">
+                  id="cei_for_historians-link-linkTargets3-constraint-assert-18">
             <rule context="tei:link">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -9190,7 +9180,7 @@ Suggested values include: 1] d (days); 2] h (hours); 3] min (minutes); 4] s (sec
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-join-joinTargets3-constraint-assert-20">
+                  id="cei_for_historians-join-joinTargets3-constraint-assert-19">
             <rule context="tei:join">
                <assert xmlns:s="http://purl.oclc.org/dsdl/schematron"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -9355,7 +9345,7 @@ Suggested values include: 1] d (days); 2] h (hours); 3] min (minutes); 4] s (sec
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-standOff-nested_standOff_should_be_typed-constraint-assert-21">
+                  id="cei_for_historians-standOff-nested_standOff_should_be_typed-constraint-assert-20">
             <rule context="tei:standOff">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -11024,7 +11014,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-persName-persNameRoleReq-constraint-rule-19">
+                  id="cei_for_historians-persName-persNameRoleReq-constraint-rule-18">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:persName">
@@ -11034,7 +11024,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-persName-persNameNymRefReq-constraint-rule-20">
+                  id="cei_for_historians-persName-persNameNymRefReq-constraint-rule-19">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:persName">
@@ -11044,7 +11034,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-persName-persNameNymRefMatchXmlid-constraint-rule-21">
+                  id="cei_for_historians-persName-persNameNymRefMatchXmlid-constraint-rule-20">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:persName[@nymRef]">
@@ -11196,7 +11186,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-roleName-roleNameNymRefMatchXmlid-constraint-rule-22">
+                  id="cei_for_historians-roleName-roleNameNymRefMatchXmlid-constraint-rule-21">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:roleName[@nymRef]">
@@ -11236,7 +11226,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-placeName-placeNameNymRefReq-constraint-rule-23">
+                  id="cei_for_historians-placeName-placeNameNymRefReq-constraint-rule-22">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:body//tei:placeName">
@@ -11246,7 +11236,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-placeName-placeNameNymRefMatchXmlid-constraint-rule-24">
+                  id="cei_for_historians-placeName-placeNameNymRefMatchXmlid-constraint-rule-23">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:placeName[@nymRef]">
@@ -12371,7 +12361,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-place-locationMatchXmlid-constraint-rule-25">
+                  id="cei_for_historians-place-locationMatchXmlid-constraint-rule-24">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//tei:place//tei:location">
@@ -12457,7 +12447,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-relation-passiveMatchXmlid-constraint-rule-26">
+                  id="cei_for_historians-relation-passiveMatchXmlid-constraint-rule-25">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@passive]">
@@ -12472,7 +12462,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-relation-activeMatchXmlid-constraint-rule-27">
+                  id="cei_for_historians-relation-activeMatchXmlid-constraint-rule-26">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@active]">
@@ -12487,7 +12477,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-relation-mutualMatchXmlid-constraint-rule-28">
+                  id="cei_for_historians-relation-mutualMatchXmlid-constraint-rule-27">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="//*[@mutual]">
@@ -12502,7 +12492,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-38">
+                  id="cei_for_historians-relation-reforkeyorname-constraint-assert-37">
             <rule context="tei:relation">
                <assert xmlns:s="http://purl.oclc.org/dsdl/schematron"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13133,7 +13123,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-facsimile-no_facsimile_text_nodes-constraint-rule-29">
+                  id="cei_for_historians-facsimile-no_facsimile_text_nodes-constraint-rule-28">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13271,7 +13261,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-path-pathmustnotbeclosed-constraint-rule-30">
+                  id="cei_for_historians-path-pathmustnotbeclosed-constraint-rule-29">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13325,7 +13315,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-39">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-constraint-assert-38">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13337,7 +13327,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-40">
+                  id="cei_for_historians-addSpan-addSpan-requires-spanTo-fr-constraint-assert-39">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13371,7 +13361,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-41">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-constraint-assert-40">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13383,7 +13373,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-42">
+                  id="cei_for_historians-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-41">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13405,7 +13395,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-43">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-constraint-assert-42">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13417,7 +13407,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-44">
+                  id="cei_for_historians-delSpan-delSpan-requires-spanTo-fr-constraint-assert-43">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -13592,7 +13582,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-subst-substContents1-constraint-assert-45">
+                  id="cei_for_historians-subst-substContents1-constraint-assert-44">
             <rule context="tei:subst">
                <assert xmlns:s="http://purl.oclc.org/dsdl/schematron"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -14108,7 +14098,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-46">
+                  id="cei_for_historians-catchwords-catchword_in_msDesc-constraint-assert-45">
             <rule context="tei:catchwords">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -14341,7 +14331,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-47">
+                  id="cei_for_historians-secFol-secFol_in_msDesc-constraint-assert-46">
             <rule context="tei:secFol">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -14360,7 +14350,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-48">
+                  id="cei_for_historians-signatures-signatures_in_msDesc-constraint-assert-47">
             <rule context="tei:signatures">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -15709,7 +15699,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-49">
+                  id="cei_for_historians-rdgGrp-only1lem-constraint-assert-48">
             <rule context="tei:rdgGrp">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -15871,7 +15861,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="cei_for_historians-variantEncoding-location-variantEncodingLocation-constraint-rule-31">
+                  id="cei_for_historians-variantEncoding-location-variantEncodingLocation-constraint-rule-30">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18011,7 +18001,7 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
       </choice>
    </start>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="cei_for_historians-sourceMatchXmlid-constraint-rule-32">
+            id="cei_for_historians-sourceMatchXmlid-constraint-rule-31">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               context="//tei:profileDesc//*[@source]">

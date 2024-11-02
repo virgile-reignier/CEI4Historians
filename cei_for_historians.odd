@@ -474,16 +474,6 @@
                                 </s:rule>
                             </constraint>
                         </constraintSpec>
-                        <constraintSpec ident="refAnaReq" scheme="schematron">
-                            <desc>The @ana attribute is required when @corresp doesn't refer to
-                                another text</desc>
-                            <constraint>
-                                <s:rule context="not(contains(./@corresp, '#'))">
-                                    <s:assert test="@ana">The element must have the @ana attribute
-                                    </s:assert>
-                                </s:rule>
-                            </constraint>
-                        </constraintSpec>
                         <attList>
                             <attDef ident="type" mode="replace" usage="rec">
                                 <valList type="closed">
