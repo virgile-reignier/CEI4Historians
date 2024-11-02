@@ -509,7 +509,8 @@
                                             validity.</desc>
                                     </valItem>
                                     <valItem ident="mentioned">
-                                        <desc>Any document to which reference is made in a text,
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#88">VID
+                                            88</ref>. Any document to which reference is made in a text,
                                             without having a direct legal role in relation to the
                                             provisions of the act which mentions it.</desc>
                                     </valItem>
