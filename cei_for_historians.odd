@@ -508,11 +508,17 @@
                                             in another document in order to transfer its legal
                                             validity.</desc>
                                     </valItem>
+                                    <valItem ident="duplicated">
+                                        <desc><ref target="http://www.cei.lmu.de/VID/#45">VID
+                                                45</ref>. Other copy of a document produced by the
+                                            same authority and containing the same legal
+                                            validity.</desc>
+                                    </valItem>
                                     <valItem ident="mentioned">
                                         <desc><ref target="http://www.cei.lmu.de/VID/#88">VID
-                                            88</ref>. Any document to which reference is made in a text,
-                                            without having a direct legal role in relation to the
-                                            provisions of the act which mentions it.</desc>
+                                                88</ref>. Any document to which reference is made in
+                                            a text, without having a direct legal role in relation
+                                            to the provisions of the act which mentions it.</desc>
                                     </valItem>
                                     <valItem ident="unknown">
                                         <desc>Act mentioned in a document without it being possible
