@@ -49,7 +49,7 @@ declare function cei:checkInvalidReferences($collectionName as xs:string) as ite
 declare function cei:checkInvalidCorresps($collectionName as xs:string) as item()*
 {
   let $collection := db:open($collectionName)
-let $validIds := $collection//TEI/@xml:id | $collection//teiCorpus/@xml:id
+let $validIds := $collection//TEI/@xml:id | $collection//teiCorpus/@xml:id | $collection//ref[not(contains(@corresp, '#'))]/@corresp
 for $doc in $collection
 let $invalidCorresps := $doc//body//*[@corresp and contains(@corresp, '#') and not(substring-after(@corresp, '#') = $validIds)]
 for $invalidCorresp in $invalidCorresps
