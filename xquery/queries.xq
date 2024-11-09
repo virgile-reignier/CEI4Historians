@@ -51,7 +51,7 @@ declare function cei:checkInvalidCorresps($collectionName as xs:string) as item(
   let $collection := db:open($collectionName)
 let $validIds := $collection//TEI/@xml:id | $collection//teiCorpus/@xml:id
 for $doc in $collection
-let $invalidCorresps := $doc//body//*[@corresp and not(substring-after(@corresp, '#') = $validIds) and not(@corresp = 'unknown')]
+let $invalidCorresps := $doc//body//*[@corresp and contains(@corresp, '#') and not(substring-after(@corresp, '#') = $validIds)]
 for $invalidCorresp in $invalidCorresps
 return (
   "L'acte suivant :",
