@@ -1,5 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/relax_ng/cei_for_historians.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/relax_ng/cei_for_historians.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="AD38-B-3894-4">
+<?xml-model href="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/relax_ng/cei_for_historians.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/virgile-reignier/CEI4Historians/main/relax_ng/cei_for_historians.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="AD38-B-3894-4">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -35,8 +34,7 @@
                             </diploDesc>
                             <authDesc>
                                 <seal n="1" type="pendant">
-                                    <p>Ficelle visible sur la photo, probablement pour attacher un
-                                        sceau</p>
+                                    <p>Reste de ficelle</p>
                                 </seal>
                                 <authen type="split">
                                     <p>traces de chirographe</p>
@@ -50,24 +48,24 @@
         <profileDesc>
             <abstract>
                 <list>
-                    <item source="#reg_dauph">
-                        <ref>Reg. Dauph. 9229</ref>. Vente par Henri de Barrès à Aimar, comte de
+                    <item source="#reg_viv">
+                        <ref>Reg. Viv. 119</ref>. Vente par Henri de Barrès à Aimar, comte de
                         Valentinois, de tous ses droits sur le château de Barrès et à la Roche :
                         fort, tour et autres édifices, jusqu’à la Cros, la Petia, Latzellier et al
                         serre del Lac, spécialement 3 hommes, et ses dépendances, à l’exception de
                         cinq hommes qu’il se réserve et qui sont nominativement désignés, moyennant
                         une somme de 50 livres viennois</item>
-                    <item source="#reg_dauph">Reg. Dauph. Supp. 1129</item>
-                    <item source="#reg_viv">
-                        <ref>Reg. Viv. 119</ref>
+                    <item source="#reg_dauph">
+                        <ref>Reg. Dauph. 9229</ref>
                     </item>
+                    <item source="#reg_dauph"><ref>Reg. Dauph. Supp. 1129</ref></item>
                     <item source="#inv_marcellier"><ref>Invent. Vivarais, 422</ref></item>
                     <item>Rouchier, Hist. Du Vivarais, I, 497</item>
                 </list>
             </abstract>
             <textClass>
                 <keywords corresp="#vid_1997">
-                    <term corresp="http://www.cei.lmu.de/VID#484">venditio</term>
+                    <term corresp="http://www.cei.lmu.de/VID/#484">venditio</term>
                 </keywords>
             </textClass>
             <langUsage>
@@ -75,107 +73,86 @@
             </langUsage>
         </profileDesc>
     </teiHeader>
-    <text>
+    <text type="full">
         <body>
-            <p><issued><date when="1256-05-17">Anno domini Mo CCo quinquagesimo sexto, die mercurii
-                        ante rogationes</date></issued>, ego <persName role="issuer"
-                    nymRef="#enricus_de_barre">Enricus de Barres</persName> non vi non dolo nec
-                aliqua fraude seu ma<lb/>chinatione ad hoc inductus set ex certa scientia et
-                spontanea voluntate mea, <diploPart type="dispositio">vendo per me et omnis heredes
-                    atque successores meos vobis <persName role="recipient"
-                        nymRef="#ademarus_III_de_pictavia"><roleName
-                            nymRef="#ademarus_III_de_pictavia">domino</roleName><lb/> A. comiti
+            <p><diploPart type="datatio"><date when="1256-05-17">Anno domini Mo CCo quinquagesimo
+                        sexto, die mercurii ante rogationes</date></diploPart>, <diploPart type="intitulatio">ego <persName role="issuer" nymRef="#enricus_de_barre">Enricus de Barres</persName> non vi non dolo nec aliqua fraude seu
+                    ma<lb/>chinatione ad hoc inductus set ex certa scientia et spontanea voluntate
+                    mea,</diploPart>
+                <diploPart type="dispositio">vendo per me et omnis heredes atque successores meos
+                    vobis <persName role="recipient" nymRef="#ademarus_III_de_pictavia"><roleName nymRef="#ademarus_III_de_pictavia">domino</roleName><lb/> A. comiti
                         Valan.</persName> et vostris heredibus atque successoribus et titulo
                     perfecte venditionis vobis trado seu quasi <asset type="realEstate">quicquid
-                        habeo et habere debeo seu vi<lb/>sus sum habere in <placeName
-                            nymRef="#barre">castro de Barre</placeName>, in <placeName
-                            nymRef="#rupe">Rupe et in fortalicia et turri et in aliis edificiis in
-                            dicta Rupe sitis</placeName></asset> et <asset type="realEstate"
-                        >quicquid habeo in <placeName nymRef="#barre">dicto ca<lb/>stro inferius et
+                        habeo et habere debeo seu vi<lb/>sus sum habere in <placeName nymRef="#barre">castro de Barre</placeName>, in <placeName nymRef="#rupe">Rupe et in fortalicia et turri et in aliis edificiis in
+                            dicta Rupe sitis</placeName></asset> et <asset type="realEstate">quicquid habeo in <placeName nymRef="#barre">dicto ca<lb/>stro inferius et
                             in tenemento eiusdem castri</placeName>, infra fines inferius nominatos
-                        scilicet <delimitation type="boundary">usque ad <placeName nymRef="#alacros"
-                                >loccum in quo appellatur Alacros</placeName> et usque ad <placeName
-                                nymRef="#alapetia">loccum in quo<lb/> appellatur
-                                Alapetia</placeName> et usque ad <placeName nymRef="#alarselier"
-                                >loccum in quo appellatur Alarselier</placeName> et usque ad
+                        scilicet <delimitation type="boundary">usque ad <placeName nymRef="#alacros">loccum in quo appellatur Alacros</placeName> et usque ad <placeName nymRef="#alapetia">loccum in quo<lb/> appellatur
+                                Alapetia</placeName> et usque ad <placeName nymRef="#alarselier">loccum in quo appellatur Alarselier</placeName> et usque ad
                                 <placeName nymRef="#al_serre_del_lac">locum in quo appellatur Al
                                 Serre Del Lac</placeName></delimitation></asset>; vendo, inquam,
-                    omnia su<lb/>pradicta <diploPart type="appartClause">sive sint dominia sive
-                        usagia, proprietates, servitia, clamores seu justitie, prata, pascua,
-                        nemora, patua, aquarum decur<lb/>sus, banna, venationes, census et omnia
-                        alia quocumque nomine appellentur et <delimitation type="addition"
-                            >specialiter <asset type="amount"><measure unit="servus" quantity="3"
-                                    >tres homines</measure> scilicet <persName
-                                    nymRef="#bertrandus_bochi" role="third">Bertrandum
-                                    Bochi</persName>,<lb/>
+                        <asset type="fiefdom">omnia su<lb/>pradicta <diploPart type="appartClause">sive sint dominia sive usagia, proprietates, servitia, clamores seu
+                            justitie, prata, pascua, nemora, patua, aquarum decur<lb/>sus, banna,
+                            venationes, census et omnia alia quocumque nomine
+                            appellentur</diploPart> et <delimitation type="addition">specialiter
+                                <asset type="amount"><measure unit="servus" quantity="3">tres
+                                    homines</measure> scilicet <persName nymRef="#bertrandus_bochi" role="third">Bertrandum Bochi</persName>,<lb/>
                                 <persName nymRef="#stephanus_de_tapias" role="third">Stephanum de
-                                    Tapias</persName>, <persName nymRef="#petrus_audegerii_senior"
-                                    role="third">Petrum Audegerii
+                                    Tapias</persName>, <persName nymRef="#petrus_audegerii_senior" role="third">Petrum Audegerii
                             seniorem</persName></asset></delimitation> et quicquid juris
                         consuetudinis habeo in predictis et generaliter omnia alia ju<lb/>ra quod
                         habeo in dicto castro seu eiusdem tenemento infra fines superius nominatos;
-                            <delimitation type="subtraction">exipio tecum de dicta venditione <asset
-                                type="amount"><measure unit="servus" quantity="5">quinque
+                            <delimitation type="subtraction">exipio tecum de dicta venditione <asset type="amount"><measure unit="servus" quantity="5">quinque
                                     homines</measure> quos retineo<lb/> ad manum meam personas eorum
-                                temporum et eorum successorum scilicet <persName
-                                    nymRef="#poncius_bres" role="third">Poncium</persName> et
+                                temporum et eorum successorum scilicet <persName nymRef="#poncius_bres" role="third">Poncium</persName> et
                                     <persName nymRef="#guillermus_bres" role="third">Guillermum
-                                    Bres</persName>, <persName nymRef="#petrus_de_manopra"
-                                    role="third">Petrum</persName> et <persName
-                                    nymRef="#guillermus_de_manopra" role="third">Guillermum de
+                                    Bres</persName>, <persName nymRef="#petrus_de_manopra" role="third">Petrum</persName> et <persName nymRef="#guillermus_de_manopra" role="third">Guillermum de
                                     Manopra</persName> et<lb/>
                                 <persName nymRef="#audegerius_junior" role="third">Audegerium
-                                    juniorem</persName></asset></delimitation></diploPart>; vendo,
-                    inquam, vobis domino A omnia supradicta precio <asset type="amount"><measure
-                            unit="libra_viennensium" quantity="50">quinquaginta librarum
+                                    juniorem</persName></asset></delimitation></asset>; vendo,
+                    inquam, vobis domino A omnia supradicta precio <asset type="amount"><measure unit="libra_viennensium" quantity="50">quinquaginta librarum
                             Viennensum</measure></asset> de quibus mei plenarie
-                    persolvistis</diploPart> et<lb/>
-                <sic>me</sic> me teneo pro pacato et renuntio exceptioni non numerate mei peccunie
-                et precii mei non soluti. Si vero predictum castrum et alia<lb/> supradicta plus
-                valent precio supraducto, illud plus valens quantumcumque sit et etiam certioratus
-                quod plus valeat, vobis domino A supradicto gratis<lb/> dono et remito donatione
-                facta inter vivos; dans et concedens plenariam potestatem vobis dicto domino A quod
-                possetionem<lb/> omnium rerum et singularum predictarum valeatis auctoritate vostra
-                propria adipisti et interim constituo me vostro nomine pos<lb/>side universa et
-                singula supradicta; cedens causa venditionis predicte vobis dicto domino A omnis
-                actiones reales, personales, arbitrarias<lb/> atque mixtas utiles et directas quod
-                mei actione rerum predictarum et singularum competunt et possent competere in
-                futurum uosque dominum A<lb/> procuratorem constituo in rem vostram in omnibus et
-                singulis supradictis et permito vobis dicto domino A interroganti quod si aliquis
-                vobis in predictis<lb/> moveret aliqua questionem quod ego vobis salvem et deffendam
-                in jure et extra jus et de evictione me vobis obligo; et quod omnia supradicta<lb/>
-                compleat et attendam ut supradictum esse contraque non veniam aliquo jure seu aliqua
-                ratione per me vel per aliqua interpositam personam vobis<lb/> dicto domino A
-                promitto et tactis a me corporaliter sacro sanctis euvangeliis juro et promito sub
-                virtute prestiti juramenti<lb/> quod uxor mea et liberi mei dicte venditioni
-                consentiant et eam laudabunt et confirmabunt et renuntio in hoc facto omni juri<lb/>
-                canonico et civili scripto et non scripto promulgato et promulgando et
-                consuetudinario et specialiter juri quod dicit quod si venditor<lb/> sit deceptus
-                ultra dimidiam justi precii quod possit retindere dictam venditionem et ad se res
-                venditam revocare. Item re<lb/>nuncio et tenori quod in factum actioni de dolo
-                actionique in factum et omni alii juri quod tenor quo vel qua contra predicta vel
-                aliquid de pre<lb/>dictis venire possem et juri dicenti generalem renuntiationem non
-                valere. <diploPart type="datatio">Acta sunt hec <issued>apud <placeName
-                            nymRef="#bays">Banium</placeName> in <placeName
-                            nymRef="#fornellus_novus_banii">fornello<lb/>
-                    novo</placeName></issued></diploPart> coram hiis testibus ad hec vocatis et
-                rogatis <persName role="witness" nymRef="#lambertus_de_arceno">Lamberto de
-                    Arceno</persName>, <persName role="witness" nymRef="#johannes_de_poioleno"
-                    >Johanne de Poioleno</persName>
-                <roleName nymRef="#johannes_de_poioleno #lambertus_de_arceno"
-                    >jurisperitis</roleName>, <persName nymRef="#poncius_baiulus_de_fayno"
-                    role="witness">Poncio <roleName nymRef="#poncius_baiulus_de_fayno">baiulo
-                        de<lb/> Fayno</roleName></persName>, <persName nymRef="#poncius_de_banio"
-                    role="witness">Poncio de Banio</persName>, <persName role="witness"
-                    nymRef="#poncius_bufeira">Poncio Bufeira</persName>, <persName role="witness"
-                    nymRef="#erpinus">Erpino</persName> in cujus rei testimonium et ad majorem
-                firmitatem omnium predictorum ego<lb/> dictus <persName role="sigillant"
-                    nymRef="#enricus_de_barre">Enricus</persName> presentem cartam duxi sigilli mei
-                minumine roborandam et ego <persName nymRef="#bermundus" role="notary">Bermundus
-                        <roleName nymRef="#bermundus">publicus notharius domini A co<lb/>mitis
-                        Valan.</roleName></persName> hiis omnibus presens fui et mandato domini A
-                comitis Valan. et Enrici et testium predictorum presentem cartam<lb/> scripsi et
-                signo meo signavi (croix).</p>
+                    persolvistis</diploPart><diploPart type="explaClause"> et<lb/>
+                    <sic>me</sic> me teneo pro pacato et renuntio exceptioni non numerate mei
+                    peccunie et precii mei non soluti. Si vero predictum castrum et alia<lb/>
+                    supradicta plus valent precio supraducto, illud plus valens quantumcumque sit et
+                    etiam certioratus quod plus valeat, vobis domino A supradicto gratis<lb/> dono
+                    et remito donatione facta inter vivos; dans et concedens plenariam potestatem
+                    vobis dicto domino A quod possetionem<lb/> omnium rerum et singularum
+                    predictarum valeatis auctoritate vostra propria adipisti et interim constituo me
+                    vostro nomine pos<lb/>side universa et singula supradicta; cedens causa
+                    venditionis predicte vobis dicto domino A omnis actiones reales, personales,
+                    arbitrarias<lb/> atque mixtas utiles et directas quod mei actione rerum
+                    predictarum et singularum competunt et possent competere in futurum uosque
+                    dominum A<lb/> procuratorem constituo in rem vostram in omnibus et singulis
+                    supradictis et permito vobis dicto domino A interroganti quod si aliquis vobis
+                    in predictis<lb/> moveret aliqua questionem quod ego vobis salvem et deffendam
+                    in jure et extra jus et de evictione me vobis obligo; et quod omnia
+                    supradicta<lb/> compleat et attendam ut supradictum esse contraque non veniam
+                    aliquo jure seu aliqua ratione per me vel per aliqua interpositam personam
+                    vobis<lb/> dicto domino A promitto et tactis a me corporaliter sacro sanctis
+                    euvangeliis juro et promito sub virtute prestiti juramenti<lb/> quod uxor mea et
+                    liberi mei dicte venditioni consentiant et eam laudabunt et confirmabunt et
+                    renuntio in hoc facto omni juri<lb/> canonico et civili scripto et non scripto
+                    promulgato et promulgando et consuetudinario et specialiter juri quod dicit quod
+                    si venditor<lb/> sit deceptus ultra dimidiam justi precii quod possit retindere
+                    dictam venditionem et ad se res venditam revocare. Item re<lb/>nuncio et tenori
+                    quod in factum actioni de dolo actionique in factum et omni alii juri quod tenor
+                    quo vel qua contra predicta vel aliquid de pre<lb/>dictis venire possem et juri
+                    dicenti generalem renuntiationem non valere.</diploPart>
+                <diploPart type="datatio">Acta sunt hec apud <placeName nymRef="#bays">Banium</placeName> in <placeName nymRef="#fornellus_novus_banii">fornello<lb/> novo</placeName></diploPart>
+                <diploPart type="subscriptio">coram hiis testibus ad hec vocatis et rogatis
+                        <persName role="witness" nymRef="#lambertus_de_arceno">Lamberto de
+                        Arceno</persName>, <persName role="witness" nymRef="#johannes_de_poioleno">Johanne de Poioleno</persName>
+                    <roleName nymRef="#johannes_de_poioleno #lambertus_de_arceno">jurisperitis</roleName>, <persName nymRef="#poncius_baiulus_de_fayno" role="witness">Poncio <roleName nymRef="#poncius_baiulus_de_fayno">baiulo
+                            de<lb/> Fayno</roleName></persName>, <persName nymRef="#poncius_de_banio" role="witness">Poncio de Banio</persName>,
+                        <persName role="witness" nymRef="#poncius_bufeira">Poncio
+                    Bufeira</persName>, <persName role="witness" nymRef="#erpinus">Erpino</persName>
+                    in cujus rei testimonium et ad majorem firmitatem omnium predictorum ego<lb/>
+                    dictus <persName role="sigillant" nymRef="#enricus_de_barre">Enricus</persName>
+                    presentem cartam duxi sigilli mei minumine roborandam et ego <persName nymRef="#bermundus" role="notary">Bermundus <roleName nymRef="#bermundus">publicus notharius domini A co<lb/>mitis Valan.</roleName></persName>
+                    hiis omnibus presens fui et mandato domini A comitis Valan. et Enrici et testium
+                    predictorum presentem cartam<lb/> scripsi et signo meo signavi
+                    (croix).</diploPart></p>
         </body>
     </text>
 </TEI>

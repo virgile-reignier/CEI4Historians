@@ -6,8 +6,7 @@
                 <title/>
             </titleStmt>
             <editionStmt>
-                <p>Nous ne reproduisons ici que les parties qui conernent la rive droite du
-                    Rhône</p>
+                <p>Nous nous intéressons ici aux parties qui conernent la rive droite du Rhône</p>
             </editionStmt>
             <publicationStmt>
                 <p/>
@@ -54,7 +53,7 @@
             </abstract>
             <textClass>
                 <keywords corresp="#vid_1997">
-                    <term corresp="http://www.cei.lmu.de/VID#477">liber vassorum</term>
+                    <term corresp="http://www.cei.lmu.de/VID/#477">liber vassorum</term>
                 </keywords>
             </textClass>
             <langUsage>
@@ -78,182 +77,155 @@
             <profileDesc>
                 <abstract>
                     <list>
-                        <item source="#reg_dauph">
-                            <ref>Reg. Dauph. 32883</ref>. Hommage par noble Hugues de Chambaud, fils
+                        <item source="#reg_viv">
+                            <ref>Reg. Viv. 502</ref>. Hommage par noble Hugues de Chambaud, fils
                             d’André, pour le château et terre de la Tourette, au diocèse de Viviers,
                             sauf la métairie que noble Hugues de Pierregourde avait audit mandement,
                             laquelle terre de Tourette lui avait été donnée par Hugues de Tourette,
                             chevalier, dont ledit comte l’investit par le même hommage.</item>
-                        <item source="#reg_viv">
-                            <ref>Reg. Viv. 502</ref>
-                        </item>
+                        <item source="#reg_dauph">
+                            <ref>Reg. Dauph. 32883</ref></item>
                         <item source="#inv_marcellier"><ref>Invent. Vivarais, 539</ref></item>
-                        <item source="#inv_marcellier">AD 07, C 196-1, 248</item>
+                        <item source="#inv_marcellier">AD 07, C 196-1, p. 248</item>
                     </list>
                 </abstract>
                 <textClass>
                     <keywords corresp="#vid_1997">
-                        <term corresp="http://www.cei.lmu.de/VID#474">homagium</term>
+                        <term corresp="http://www.cei.lmu.de/VID/#474">homagium</term>
                     </keywords>
                 </textClass>
             </profileDesc>
         </teiHeader>
-        <text>
+        <text type="full">
             <front>
-                <head>Homagium Hugonis de Chanbaudo pro castro de Turreta</head>
+                <head>Homacgium Hugonis de Chanbaudo pro castro de Turreta</head>
             </front>
             <body>
-                <p>In Xpi nomine amen. <issued><date when="1344-05-19">Anno eiusdem incarnationis
-                            millesimo triscentesimo quadragesimo quarto et die decima nona mensis
-                            madii</date>, <persName nymRef="#ludovicus_I_de_pictavia"
-                            role="mentioned">magnifico et potenti viro domino Ludovico de Pictavia
-                                Velen. et Dien. comite</persName> existente</issued>, me presente
-                    notario publico et testibus infrascriptis, constitutus in presentia dicti domini
-                    comitis <persName role="issuer" nymRef="#hugo_de_chanbaudo"><roleName
-                            nymRef="#hugo_de_chanbaudo">vir nobilis</roleName> Hugo de Chanbaudo
-                            <relation name="fam" active="#hugo_de_chanbaudo"
-                            passive="#andrea_de_chanbaudo">filius <persName role="mentioned"
-                                nymRef="#andrea_de_chanbaudo"><roleName
-                                    nymRef="#andrea_de_chanbaudo">nobilis domicelli</roleName>
-                                Andree de Chambaudo</persName></relation></persName>, <persName
-                        role="third" nymRef="#andrea_de_chanbaudo">ipso Andrea patre presente
-                        volente et auctorisante</persName>; ipse, inquam, Hugo de Chanbaudo filius
-                    non errans in jure nec in facto set de utroque certus ut dicebat et certificatus
-                    ad plenum <diploPart type="contextus">dixit, significavit et etiam intimavit
-                            <persName nymRef="#ludovicus_I_de_pictavia" role="recipient">domino
-                            comiti supradicto presenti</persName>
-                        <asset type="fiefdom">castrum de <placeName nymRef="#turreta">Turreta in
-                                    <placeName nymRef="#ultra_rodanum">regno Fancie</placeName>
+                <p><diploPart type="invocatio">In Xpi nomine amen.</diploPart>
+                    <diploPart type="datatio"><date when="1344-05-19">Anno eiusdem incarnationis
+                        millesimo triscentesimo quadragesimo quarto et die decima nona mensis
+                        madii</date>, <persName nymRef="#ludovicus_I_de_pictavia" role="mentioned">magnifico et potenti viro domino Ludovico de Pictavia
+                            Valen. et Dien. comite</persName> existente, me presente notario publico
+                        et testibus infrascriptis,</diploPart>
+                    <diploPart type="intitulatio"><diploPart type="intitulatio">constitutus in
+                        presentia dicti domini comitis <persName role="issuer" nymRef="#hugo_de_chambaudo"><roleName nymRef="#hugo_de_chambaudo">vir nobilis</roleName> Hugo de Chanbaudo <relation name="fam" active="#hugo_de_chambaudo" passive="#andreas_de_chanbaudo">filius <persName role="mentioned" nymRef="#andreas_de_chanbaudo"><roleName nymRef="#andreas_de_chanbaudo">nobilis
+                            domicelli</roleName> Andree de
+                            Chambaudo</persName></relation></persName>, <persName role="third" nymRef="#andreas_de_chanbaudo">ipso Andrea patre
+                                presente volente et auctorisante</persName>; ipse, inquam, Hugo de
+                        Chanbaudo filius non errans in jure nec in facto set de utroque certus
+                        ut dicebat et certificatus ad plenum </diploPart></diploPart><diploPart type="narratio">dixit, significavit et etiam intimavit <persName nymRef="#ludovicus_I_de_pictavia" role="recipient">domino comiti
+                            supradicto presenti</persName>
+                            <asset type="fiefdom">castrum de <placeName nymRef="#turreta">Turreta in
+                                <placeName nymRef="#ultra_rodanum">regno Fancie</placeName>
                                 <placeName nymRef="#diocesis_vivariensis">Vivarien.
                                     dioc.</placeName></placeName> cum omnibus juribus et
-                            pertinentiis ipsius castri</asset> ad ipsum Hugonem dudum non est domini
-                        devenisse ex donationem eidem Hugone facta de dicto castro per <persName
-                            role="mentioned" nymRef="#hugo_de_turreta"><roleName
-                                nymRef="#hugo_de_turreta">virum nobilem dominum</roleName> Hugonem
-                            de Turreta <roleName nymRef="#hugo_de_turreta"
-                            >militem</roleName></persName> jam vite functum tempore quo ipse dominus
-                        Hugo vivebat et erat in humanis. Unde cum dictum castrum de Turreta teneatur
-                        a dicto domino comite in feudum francum, nobile, reddibile et antiqum cum
-                        omnibus juribus et pertinentiis suis et in et sub homacgio eiusdem domini
-                        comitis supradicti, id certo idem Hugo nomine suo et heredum et successorum
-                        suorum in futurum, presente et auctorisante predicto Andrea eius patre
-                        suppliant instanter, et cum reverentia qua decuit eidem domino comiti
-                        presenti quatenus ipse dominus comes pro se et suas heredes et successores
-                        temporibus pro futuris dignetur et velut ipsum Hugonem supplicantem,
-                        presentem, stipulantem et sollemni recipientem pro se et suis heredibus et
-                        succesorribus in futurum de dicto castro de Turreta cum omnibus juribus et
-                        pertinentiis suis in eumdem Hugonem translatis ex donationem predicta per
-                        dictum Hugonem de Turreta predictum jam definitum retinere et etiam
-                        investire paratum; se offerens dictus Hugo supplicans eidem domino comiti
-                        solvere laudum a eidem debita ex donationem predicta et facere et prestare
-                        recognitionem, homacgium ac sacramentum fidelitatis et cetera omnia ad que
-                        tenetur<pb/> ratione dicti castri domino comiti memorato et eidem servicie
-                        de dicto feudo, fideliter nominibus quibus supra qui quidem dominus comes
-                        volens se habere graciose favorabiliter et benigne erga Hugonem supplicantem
-                        predictum prout acthenus consuevit supplicationi ipsius Hugonis; annuens
-                        eumdem Hugonem presentem et ut supra sollepniter stipulantem et recipientem
-                        de <asset type="fiefdom">predicto castro de Turreta cum omnibus juribus et
-                            pertinentiis ipsius castri</asset> ad ipsum Hugonem spectantibus ratione
-                        donationis predicte per traditionem unius baculi manualiter ut moris est
-                        investivit ipsum Hugonem de ipso castro totaliter retinendo et de laudimiis
-                        eidem domino comiti pertinentibus ratione predicta, ipse dominus comes
-                        eiusdem Hugonem et eius bona omna quitavit liberavit penitus et absolvit
-                        confitendo se ipsa integraliter et perfecte habuisse et sibi satisfactum
-                        fuisse de eisdem in bona pecunia numerata, exceptioni ipsorum laudimorum non
-                        habitorum et non receptorum et spei future receptionis eorum totaliter
-                        renunciando; imo dominii, laudimii, prelationis et homacgii eidem domino
-                        comiti et suis successoribus in futurum in omnibus semper salvo jure alterio
-                        etiam semper et totaliter remanente illeso.</diploPart> Quibus pactis et
-                    incontinenti predictis, Hugo de Chanbaudo, volens quod debebat facere et etiam
-                    adimplere prout verus subditus et fidelis, presente volente et auctorisante
-                    predicto eius patre, pro se et suis heredibus et successoribus in eternum,
-                        <diploPart type="dispositio"><relation name="vas"
-                            active="#hugo_de_chanbaudo" passive="#ludovicus_I_de_pictavia">fecit
-                            homacgium licgium tam de et pro persona sua propria quam de et pro
-                                <asset type="fiefdom">castro de Turreta predicto cum omnibus juribus
-                                et pertinentiis suis</asset> dicto domino comite presenti stipulanti
-                            et sollemniter recipienti nomine suo et heredum et successorum suorum in
-                            futurum, more nobili stando pedes manus suas junctas tenendo inclusas
-                            inter manus domini comitis supradicto pacis osculum tribuendo cum qua
-                            decet reverentia et honore</relation></diploPart>; <diploPart
-                        type="explaClause">et in super fidelitatis sibi domino comiti ipse Hugo
-                        prestitit juramentum cum omnibus capitulis que in<pb/> sacramento
-                        fidelitatis secundum formas novam et veterem continentur tactis per eum
-                        manualiter dei euvangelis sacrosactis; promitendo idem Hugo pro se et suis
-                        heredibus et successoribus in futurum ipsum dominum comitem et per eum suos
-                        heredes et successorum imperpetuum jurare et sequi de guerra et placita
-                        tantus omnes et quascumque personas de mundo natas et nascituras nullo
-                        excepto; confitens et vere et publice recognoscens ex sua certa scientia
-                        idem Hugo pro se et suis heredibus et successoribus in futurum presente
-                        semper, volente et auctorisante predicto eius patre, se tenere, debere et
-                        velle tenere a dicto domino comite et suis heredibus et successoribus in
-                        futurum et suos predecessores a quibus comes habuit antiquitus tenuisse et
-                        tenere debuisse et voluisse a predicto dicti domini comitis in feudum
-                        francum reddibile et antiqum et nomine et ex causa <gap/> reddibilis et de
-                        et sub eius dicto domino predictum castrum de Turreta cum <asset
-                            type="realEstate">fortaliciis ibidem factis et etiam faciendis</asset>,
-                        mero et mixto imperio et omnimoda, juridictione alta et bassa, superioritate
-                        dominio et resorto et excercissio eorumdem tamquam eius mandamentum,
-                        territorium et districtum cum omnibus juribus et pertinentiis eorumdem ad
-                        ipsum Hugone ratione dicti castri pertinentibus <diploPart
-                            type="appartClause">sive sint feuda, retrofeuda, dominicature, allodia,
-                            servitutes, homacgia hominum vel mulierum, consuetudines, census
-                            redditus, usacgia seu alia quecumque et quocumque nomine
-                            censeantur</diploPart>, pertinentia seu pertinere valentia ad castrum de
-                        Turreta predictum in feudatum et in feudata predessoribus dicti Hugonis a
-                        predecessoribus domini comitis supradicti eidem domino comiti et suis
-                        heredibus et successoribus in futurum reddibilis in mutatione qualibet
-                        domini et vassali</diploPart>. <diploPart type="explaClause">Et alii si et
-                        totiens quotiens per ipsum dominum comitem vel eius baylivum vel certam
-                        mandatam alium eorumdem domini comitis et bayllivi, ipse Hugo vel sui
-                        heredes et in futurum successores grati et pagati in dicto castro fuerint
-                        requisiti bona fidelitatem in predictis et circa ea perpetue observata
-                            <delimitation type="subtraction">excepto tam dumtaxat <asset
-                                type="realEstate">facto quod <persName role="mentioned"
-                                    nymRef="#hugo_dominus_petrogorde"><roleName
-                                        nymRef="#hugo_dominus_petrogorde">vir nobilis
-                                        dominus</roleName> Hugo <roleName
-                                        nymRef="#hugo_dominus_petrogorde">dominus
-                                        Petregorde</roleName></persName> habet et tenet <placeName
-                                    nymRef="#turreta">infra mandamentum de Turreta
-                                    predicta</placeName></asset></delimitation>.</diploPart>
+                                pertinentiis ipsius castri</asset> ad ipsum Hugonem dudum non est domini
+                            devenisse ex donationem eidem Hugone facta de dicto castro per <persName role="mentioned" nymRef="#hugo_de_turreta"><roleName nymRef="#hugo_de_turreta">virum nobilem dominum</roleName> Hugonem
+                                de Turreta <roleName nymRef="#hugo_de_turreta">militem</roleName></persName> jam vite functum tempore quo ipse dominus
+                            Hugo vivebat et erat in humanis. Unde cum dictum castrum de Turreta teneatur
+                            a dicto domino comite in feudum francum, nobile, reddibile et antiqum cum
+                            omnibus juribus et pertinentiis suis et in et sub homacgio eiusdem domini
+                            comitis supradicti, id certo idem Hugo nomine suo et heredum et successorum
+                            suorum in futurum, presente et auctorisante predicto Andrea eius patre
+                            suppliant instanter, et cum reverentia qua decuit eidem domino comiti
+                            presenti, quatenus ipse dominus comes pro se et suas heredes et successores
+                            temporibus pro futuris dignetur et velut ipsum Hugonem supplicantem,
+                            presentem, stipulantem et sollemni recipientem pro se et suis heredibus et
+                            succesorribus in futurum de dicto castro de Turreta cum omnibus juribus et
+                            pertinentiis suis in eumdem Hugonem translatis ex donationem predicta per
+                            dictum Hugonem de Turreta predictum jam definitum retinere et etiam
+                            investire paratum; se offerens dictus Hugo supplicans eidem domino comiti
+                            solvere laudum a eidem debita ex donationem predicta et facere et prestare
+                            recognitionem, homacgium ac sacramentum fidelitatis et cetera omnia ad que
+                            tenetur<pb/> ratione dicti castri domino comiti memorato et eidem servicie
+                            de dicto feudo, fideliter nominibus quibus supra qui quidem dominus comes
+                            volens se habere graciose favorabiliter et benigne erga Hugonem supplicantem
+                            predictum prout acthenus consuevit supplicationi ipsius Hugonis; annuens
+                            eumdem Hugonem presentem et ut supra sollepniter stipulantem et recipientem
+                            de <asset type="fiefdom">predicto castro de Turreta cum omnibus juribus et
+                                pertinentiis ipsius castri</asset> ad ipsum Hugonem spectantibus ratione
+                            donationis predicte per traditionem unius baculi manualiter ut moris est
+                            investivit ipsum Hugonem de ipso castro totaliter retinendo et de laudimiis
+                            eidem domino comiti pertinentibus ratione predicta, ipse dominus comes
+                            eiusdem Hugonem et eius bona omna quitavit liberavit penitus et absolvit
+                            confitendo se ipsa integraliter et perfecte habuisse et sibi satisfactum
+                            fuisse de eisdem in bona pecunia numerata, exceptioni ipsorum laudimorum non
+                            habitorum et non receptorum et spei future receptionis eorum totaliter
+                            renunciando; imo dominii, laudimii, prelationis et homacgii eidem domino
+                            comiti et suis successoribus in futurum in omnibus semper salvo jure alterio
+                            etiam semper et totaliter remanente illeso.</diploPart><diploPart type="dispositio"> Quibus pactis et incontinenti predictis, Hugo de
+                                Chanbaudo, volens quod debebat facere et etiam adimplere prout verus
+                                subditus et fidelis, presente volente et auctorisante predicto eius patre,
+                                pro se et suis heredibus et successoribus in eternum, <relation name="vas" active="#hugo_de_chambaudo" passive="#ludovicus_I_de_pictavia">fecit
+                                    homacgium licgium tam de et pro persona sua propria quam de et pro
+                                    <asset type="fiefdom">castro de Turreta predicto cum omnibus juribus
+                                        et pertinentiis suis</asset> dicto domino comite presenti stipulanti
+                                    et sollemniter recipienti nomine suo et heredum et successorum suorum in
+                                    futurum, more nobili stando pedes manus suas junctas tenendo inclusas
+                                    inter manus domini comitis supradicto pacis osculum tribuendo cum qua
+                                    decet reverentia et honore</relation></diploPart>; <diploPart type="recoFeodi">et in super fidelitatis sibi domino comiti ipse Hugo
+                                        prestitit juramentum cum omnibus capitulis que in<pb/> sacramento
+                                        fidelitatis secundum formas novam et veterem continentur tactis per eum
+                                        manualiter dei euvangelis sacrosactis; promitendo idem Hugo pro se et suis
+                                        heredibus et successoribus in futurum ipsum dominum comitem et per eum suos
+                                        heredes et successorum imperpetuum juvare et sequi de guerra et placita
+                                        tantus omnes et quascumque personas de mundo natas et nascituras nullo
+                                        excepto; confitens et vere et publice recognoscens ex sua certa scientia
+                                        idem Hugo pro se et suis heredibus et successoribus in futurum presente
+                                        semper, volente et auctorisante predicto eius patre, se tenere, debere et
+                                        velle tenere a dicto domino comite et suis heredibus et successoribus in
+                                        futurum et suos predecessores a quibus comes habuit antiquitus tenuisse et
+                                        tenere debuisse et voluisse a predicto dicti domini comitis in feudum
+                                        francum, reddibile et antiqum et nomine et ex causa <gap/> reddibilis et de
+                                        et sub eius dicto domino <asset type="realEstate">predictum castrum de
+                                            Turreta cum fortaliciis ibidem factis et etiam faciendis</asset>, mero
+                                        et mixto imperio et omnimoda, juridictione alta et bassa, superioritate
+                                        dominio et resorto et excercissio eorumdem tamquam eius mandamentum,
+                                        territorium et districtum cum omnibus juribus et pertinentiis eorumdem ad
+                                        ipsum Hugone ratione dicti castri pertinentibus <diploPart type="appartClause">sive sint feuda, retrofeuda, dominicature, allodia,
+                                            servitutes, homacgia hominum vel mulierum, consuetudines, census
+                                            redditus, usacgia seu alia quecumque et quocumque nomine
+                                            censeantur</diploPart>, pertinentia seu pertinere valentia ad castrum de
+                                        Turreta predictum in feudatum et in feudata predessoribus dicti Hugonis a
+                                        predecessoribus domini comitis supradicti eidem domino comiti et suis
+                                        heredibus et successoribus in futurum reddibilis in mutatione qualibet
+                                        domini et vassali</diploPart>. <diploPart type="explaClause">Et alii si et
+                                            totiens quotiens per ipsum dominum comitem vel eius baylivum vel certam
+                                            mandatam alium eorumdem domini comitis et bayllivi, ipse Hugo vel sui
+                                            heredes et in futurum successores <asset type="privilege">grati et pagati in
+                                                dicto castro fuerint requisiti bona fidelitatem in predictis et circa ea
+                                                perpetue observata <delimitation type="subtraction">excepto tam dumtaxat
+                                                    <asset type="realEstate">facto quod <persName role="mentioned" nymRef="#hugo_dominus_petregorde"><roleName nymRef="#hugo_dominus_petregorde">vir nobilis
+                                                        dominus</roleName> Hugo <roleName nymRef="#hugo_dominus_petregorde">dominus
+                                                            Petregorde</roleName></persName> habet et tenet
+                                                        <placeName nymRef="#turreta">infra mandamentum de Turreta
+                                                            predicta</placeName></asset></delimitation></asset>.</diploPart>
                     <diploPart type="explaClause">Nam illud factum excepit et ipsum non recognovit
                         nec recognoscere debet dictus Hugo a domino comite supradicto, confitendo
                         etiam et vere et publice recognoscendo idem Hugo quibus supra nominibus quod
                         in mutatione qualibet domini et vassalli tenetur facere et prestare ipsi
                         domino <pb/>comiti et suis heredibus et successoribus in futurum similis
                         homacgium sacramentum fidelitatis et recognitionem. Et alii si et totiens
-                        quotiens pro parte dicti domini comitis et eius baylivi fierit
-                        requisitus.</diploPart> De quibus tam dictis dominus comes quam dictus Hugo
-                    et eorum quilibet sibi petierunt fieri publicum et publica infra et etiam
-                    concesserunt per me notarium infrascriptum. <diploPart type="datatio">Acta
-                        fuerunt hec <issued>apud <placeName nymRef="#cresta">Crestam</placeName>, in
-                                <placeName nymRef="#hospicio_berengarii_spalhardi">hospicio
-                                    <persName role="mentioned" nymRef="#berengarius_spalhardi"
-                                    >Berengarii Spalhardi</persName>, in quadam
-                            camera</placeName></issued></diploPart>, testibus presentibus <roleName
-                        nymRef="#guillermus_cornilhani #umbertus_bermissonis_de_marsanum #guillermus_dalmatii_de_castro_novo_dalmateno #petrus_aymerici_de_soyancio #poncius_de_floyrato #petrus_maliani_de_vivario"
-                        >viris nobilibus</roleName>
-                    <persName role="witness" nymRef="#guillermus_cornilhani">Guillermo Cornilhani
-                            <roleName nymRef="#guillermus_cornilhani">domino pro parte sua
-                                <placeName nymRef="#podium_sancti_martini">Podii Sancti
-                                Martini</placeName></roleName></persName>, <persName role="witness"
-                        nymRef="#umbertus_bermissonis_de_marsanum">Umberto Bermissonis de
-                        Marssanum</persName>, <persName role="witness"
-                        nymRef="#guillermus_dalmatii_de_castro_novo_dalmateno">Guillermo Dalmatii de
-                        Castro Novo Dalmateno</persName>, <persName role="witness"
-                        nymRef="#petrus_aymerici_de_soyancio">Petro Aymerici de Soyantio</persName>,
-                        <persName role="witness" nymRef="#poncius_de_floyrato">Poncio de Floyrato de
-                            <placeName nymRef="#bays">Banio <placeName nymRef="#ultra_rodanum">in
-                                regno</placeName></placeName></persName>, <persName role="witness"
-                        nymRef="#petrus_maliani_de_vivario">Petro Maliani de Vivario</persName> et
-                    me <persName role="notary" nymRef="#reymundus_umberti_de_chaperlliano">Reymundo
-                        Umberti de Chaperlliano <placeName nymRef="#diocesis_valentinensis">valen.
-                            dioc.</placeName>
-                        <roleName nymRef="#reymundus_umberti_de_chaperlliano">dicto domini comitis
-                            notario publico</roleName></persName> qui predictis una cum dictis
-                    testibus presen fui et de ipsis notam recepi de qua nota hoc instrumentum
-                    presens publicum.</p>
+                        quotiens pro parte dicti domini comitis et eius baylivi fierit requisitus.
+                        De quibus tam dictis dominus comes quam dictus Hugo et eorum quilibet sibi
+                        petierunt fieri publicum et publica infra et etiam concesserunt per me
+                        notarium infrascriptum.</diploPart>
+                    <diploPart type="datatio">Acta fuerunt hec apud <placeName nymRef="#cresta">Crestam</placeName>, in <placeName nymRef="#hospicium_berengarii_spalhardi">hospicio <persName role="mentioned" nymRef="#berengarius_spalhardi">Berengarii
+                        Spalhardi</persName>, in quadam camera</placeName></diploPart>,
+                    <diploPart type="subscriptio">testibus presentibus <roleName nymRef="#guillermus_cornilhani #umbertus_bermissonis_de_marsanum #guillermus_dalmatii #petrus_aymerici_de_soyancio #poncius_de_floyraco #petrus_maliani_de_vivario">viris nobilibus</roleName>
+                        <persName role="witness" nymRef="#guillermus_cornilhani">Guillermo
+                            Cornilhani <roleName nymRef="#guillermus_cornilhani">domino pro parte
+                                sua <placeName nymRef="#podium_sancti_martini">Podii Sancti
+                                    Martini</placeName></roleName></persName>, <persName role="witness" nymRef="#umbertus_bermissonis_de_marsanum">Umberto
+                                        Bermissonis de Marssanum</persName>, <persName role="witness" nymRef="#guillermus_dalmatii">Guillermo Dalmatii de Castro Novo
+                                            Dalmateno</persName>, <persName role="witness" nymRef="#petrus_aymerici_de_soyancio">Petro Aymerici de
+                                                Soyantio</persName>, <persName role="witness" nymRef="#poncius_de_floyraco">Poncio de Floyraco de <placeName nymRef="#bays">Banio <placeName nymRef="#ultra_rodanum">in
+                                                    regno</placeName></placeName></persName>, <persName role="witness" nymRef="#petrus_maliani_de_vivario">Petro Maliani de
+                                                        Vivario</persName> et me <persName role="notary" nymRef="#raymundus_humberti">Reymundo Umberti de Chaprilliano <placeName nymRef="#diocesis_valentinensis">valen. dioc.</placeName>
+                                                            <roleName nymRef="#raymundus_humberti">dicto domini comitis notario
+                                                                publico</roleName></persName> qui predictis una cum dictis testibus
+                        presen fui et de ipsis notam recepi de qua nota hoc instrumentum presens
+                        publicum.</diploPart></p>
             </body>
         </text>
     </TEI>
