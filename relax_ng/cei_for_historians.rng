@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-12-06T09:27:10Z. .
+Schema generated from ODD source 2025-12-06T09:33:05Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17846,6 +17846,8 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                   <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#334">VID
                                                 334</a>. Consent and confirmation of a decision by a parent or lord.</a:documentation>
+               <value>procuratio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Proxy clause). Clause by which one or more persons give proxy to one or more persons to speak on their behalf.</a:documentation>
             </choice>
          </attribute>
          <empty/>
