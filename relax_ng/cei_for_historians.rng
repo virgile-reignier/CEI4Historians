@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-11-05T09:25:29Z. .
+Schema generated from ODD source 2025-12-06T09:27:10Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -17824,6 +17824,10 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:do
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                   <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#425">VID
                                                 425</a>. (Donation clause). Clause adding a gift of assets to the realisations of the act.</a:documentation>
+               <value>venditio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                  <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#484">VID
+                                                484</a>. (Sale clause). Clause adding a sale of assets to the realisations of the act.</a:documentation>
                <value>confirmatio</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
                   <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.cei.lmu.de/VID/#51">VID

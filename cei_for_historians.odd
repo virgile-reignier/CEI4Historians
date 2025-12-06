@@ -134,6 +134,12 @@
                                                 425</ref>. (Donation clause). Clause adding a gift
                                             of assets to the realisations of the act.</desc>
                                     </valItem>
+                                    <valItem ident="venditio" mode="add">
+                                        <desc>
+                                            <ref target="http://www.cei.lmu.de/VID/#484">VID
+                                                484</ref>. (Sale clause). Clause adding a sale
+                                            of assets to the realisations of the act.</desc>
+                                    </valItem>
                                     <valItem ident="confirmatio" mode="add">
                                         <desc>
                                             <ref target="http://www.cei.lmu.de/VID/#51">VID
