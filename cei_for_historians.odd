@@ -171,6 +171,11 @@
                                                 334</ref>. Consent and confirmation of a decision by
                                             a parent or lord.</desc>
                                     </valItem>
+                                    <valItem ident="procuratio" mode="add">
+                                        <desc> (Proxy clause). Clause by which one or more persons
+                                            give proxy to one or more persons to speak on their
+                                            behalf.</desc>
+                                    </valItem>
                                 </valList>
                             </attDef>
                         </attList>
